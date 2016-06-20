@@ -1,6 +1,6 @@
 # blog
 ---
-######Material Design 风格的Hexo主题，基于 Hexo 3.0+ 制作。预览：[我的博客](https://github.com/zclucky/blog)
+######Material Design 风格的Hexo主题，基于 Hexo 3.0+ 制作。预览：[我的博客](http://myxxqy.com/)
 ---
 ##特色
 - 仅支持 IE10+ 等现代浏览器。
