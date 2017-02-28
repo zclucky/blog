@@ -1,0 +1,672 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="upload," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="传统的form表单提交文件上传HTML页面代码1234&amp;lt;form method = &quot;post&quot; action=&quot;index.php/User/upload&quot; enctype=&apos;multipart/form-data&apos;&amp;gt;    &amp;lt;input type=&quot;file&quot;  name=&quot;uploadfile&quot;/ &amp;gt;    &amp;lt;input type=&quot;submit&quot; /&amp;gt;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP文件上传upload">
+<meta property="og:url" content="http://yoursite.com/2016/07/05/PHP文件上传upload/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="传统的form表单提交文件上传HTML页面代码1234&amp;lt;form method = &quot;post&quot; action=&quot;index.php/User/upload&quot; enctype=&apos;multipart/form-data&apos;&amp;gt;    &amp;lt;input type=&quot;file&quot;  name=&quot;uploadfile&quot;/ &amp;gt;    &amp;lt;input type=&quot;submit&quot; /&amp;gt;&amp;">
+<meta property="og:updated_time" content="2016-08-12T09:02:16.410Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP文件上传upload">
+<meta name="twitter:description" content="传统的form表单提交文件上传HTML页面代码1234&amp;lt;form method = &quot;post&quot; action=&quot;index.php/User/upload&quot; enctype=&apos;multipart/form-data&apos;&amp;gt;    &amp;lt;input type=&quot;file&quot;  name=&quot;uploadfile&quot;/ &amp;gt;    &amp;lt;input type=&quot;submit&quot; /&amp;gt;&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/05/PHP文件上传upload/"/>
+
+
+
+
+
+  <title> PHP文件上传upload | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/05/PHP文件上传upload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP文件上传upload
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-05T22:22:16+08:00">
+                2016-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="传统的form表单提交文件上传"><a href="#传统的form表单提交文件上传" class="headerlink" title="传统的form表单提交文件上传"></a>传统的form表单提交文件上传</h1><h2 id="HTML页面代码"><a href="#HTML页面代码" class="headerlink" title="HTML页面代码"></a>HTML页面代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span> = <span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"index.php/User/upload"</span> <span class="attr">enctype</span>=<span class="string">'multipart/form-data'</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span>  <span class="attr">name</span>=<span class="string">"uploadfile"</span>/ &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>表单中<code>enctype=&quot;multipart/form-data&quot;</code>的意思，是设置表单的MIME编码。默认情况，这个编码格式是<code>application/x-www-form-urlencoded</code>，不能用于文件上传；只有使用了<code>multipart/form-data</code>，才能完整的传递文件数据，进行下面的操作。</p>
+<h2 id="PHP页面代码"><a href="#PHP页面代码" class="headerlink" title="PHP页面代码"></a>PHP页面代码</h2><p>这里我做了路径路由，这是后端<code>index.php</code>文件的代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$arr    = explode(<span class="string">"/"</span>,ltrim($_SERVER[<span class="string">'PATH_INFO'</span>],<span class="string">"/"</span>));</div><div class="line">$head = $arr[<span class="number">0</span>].<span class="string">"Controller"</span>;</div><div class="line">$con    = $arr[<span class="number">1</span>];</div><div class="line"><span class="keyword">require</span> <span class="string">"$head.class.php"</span>;</div><div class="line">$m = <span class="keyword">new</span> $head();</div><div class="line">$m-&gt;$con();</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>然后到<code>UserController.class.php</code>里面的文件处理代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserController</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">upload</span><span class="params">()</span></span>&#123;</div><div class="line">        $upload_dir =<span class="string">"./upload/"</span>; <span class="comment">//设置文件上传目录地址</span></div><div class="line">        $format = <span class="keyword">array</span>(<span class="string">"image/jpeg"</span>,<span class="string">"image/png"</span>,<span class="string">"image/gif"</span>); <span class="comment">//设置上传文件的格式类型</span></div><div class="line">        $key =  array_keys($_FILES)[<span class="number">0</span>]; <span class="comment">//这里单文件上传，获取上传文件的名称</span></div><div class="line">        <span class="keyword">if</span>($_FILES[$key][<span class="string">'size'</span>] &gt; <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">1024</span>)&#123; <span class="comment">//设置文件大小</span></div><div class="line">            <span class="keyword">die</span>(<span class="string">"文件超出大小限制"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(!in_array($_FILES[$key][<span class="string">'type'</span>],$format ))&#123;<span class="comment">//设置文件类型</span></div><div class="line">            <span class="keyword">die</span>(<span class="string">"文件类型不符"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(file_exists($upload_dir))&#123;</div><div class="line">            <span class="keyword">if</span>($_FILES[$key][<span class="string">'error'</span>] ==<span class="number">0</span>)&#123;</div><div class="line">                $tmpName = $_FILES[$key][<span class="string">'tmp_name'</span>]; <span class="comment">//获取临时文件</span></div><div class="line">                $name          = $_FILES[$key][<span class="string">'name'</span>]; <span class="comment">//获取文件真实名字</span></div><div class="line">                move_uploaded_file($tmpName, $upload_dir.$name);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，上面如果当前路径下没有upload文件夹的话，会报错。</p>
+<h1 id="通过FormData对象，然后利用XMLHttpRequest对象提交"><a href="#通过FormData对象，然后利用XMLHttpRequest对象提交" class="headerlink" title="通过FormData对象，然后利用XMLHttpRequest对象提交"></a>通过FormData对象，然后利用XMLHttpRequest对象提交</h1><h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">name</span>=<span class="string">"form"</span> <span class="attr">method</span>=<span class="string">"post"</span>  <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span>  /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"sub"</span> <span class="attr">value</span>=<span class="string">"提交"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    文件大小 (单位：M): </div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"bytesRead"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    /</div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"bytesTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="js代码"><a href="#js代码" class="headerlink" title="js代码"></a>js代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.forms[<span class="string">'form'</span>];</div><div class="line"><span class="keyword">var</span> btn = form[<span class="string">'sub'</span>];</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(form[<span class="string">'file'</span>].files.length==<span class="number">0</span>)&#123;</div><div class="line">        alert(<span class="string">"请选择文件"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> file = form[<span class="string">'file'</span>].files[<span class="number">0</span>];</div><div class="line">    <span class="keyword">var</span> reader  = <span class="keyword">new</span> FileReader();</div><div class="line">    reader.onloadstart = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//onloadstart 在读取开始时触发</span></div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"bytesTotal"</span>).textContent = <span class="built_in">parseInt</span>(file.size/<span class="number">1024</span>/<span class="number">1024</span>*<span class="number">100</span>)/<span class="number">100</span> +  <span class="string">"M"</span>;</div><div class="line">    &#125;</div><div class="line">    reader.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">p</span>)</span>&#123; <span class="comment">//onprogress  在读取进行中时触发</span></div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"bytesRead"</span>).textContent = <span class="built_in">parseInt</span>(p.loaded/<span class="number">1024</span>/<span class="number">1024</span>*<span class="number">100</span>)/<span class="number">100</span> + <span class="string">"M"</span>;</div><div class="line">    &#125;</div><div class="line">    reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 这个事件在读取成功结束后触发</span></div><div class="line">    &#125; </div><div class="line">    reader.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//文件读取完成 无论失败或成功都会触发</span></div><div class="line">        <span class="keyword">if</span>(reader.error)&#123;</div><div class="line">            <span class="built_in">console</span>.log(reader.error);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> dData = <span class="keyword">new</span> FormData(form); <span class="comment">//FormData对象</span></div><div class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">        xhr.open(<span class="string">"POST"</span>, <span class="string">"upload.php"</span>); <span class="comment">//发送方式  发送地址</span></div><div class="line">        xhr.send(dData);</div><div class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</div><div class="line">                <span class="comment">//console.log("response: " + xhr.responseText); </span></div><div class="line">                <span class="keyword">var</span> rsData = <span class="built_in">JSON</span>.parse(xhr.responseText);</div><div class="line">                <span class="keyword">if</span>(rsData.status)&#123;</div><div class="line">                    alert(<span class="string">"上传成功"</span>);</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    alert(<span class="string">"上传失败"</span>);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    reader.readAsDataURL(file);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，如果改成用$.ajax提交就更简单了，只不过需要修改点东西。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> $.ajax(&#123;</div><div class="line">    <span class="attr">url</span>:<span class="string">'./upload.php'</span>,</div><div class="line">    <span class="attr">type</span>:<span class="string">'post'</span>,</div><div class="line">    <span class="attr">cache</span>:<span class="literal">false</span>,<span class="comment">//FormData对象不需要缓存</span></div><div class="line">    data:dData,</div><div class="line">    <span class="attr">processData</span>:<span class="literal">false</span>, <span class="comment">//FormData对象 不需要做数据处理</span></div><div class="line">    contentType:<span class="literal">false</span>,  <span class="comment">//已经声明了enctype="multipart/form-data"内容编码类型，所以这里设置为false</span></div><div class="line">    success:<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> rsData = <span class="built_in">JSON</span>.parse(msg);</div><div class="line">        <span class="keyword">if</span>(rsData.status)&#123;</div><div class="line">            alert(<span class="string">"上传成功"</span>);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            alert(<span class="string">"上传失败"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>如果想要上传多个文件，只需要在<code>&lt;input type=&quot;file&quot;&gt;里添加multiple或multiple=&quot;multiple&quot;</code>属性就行了，后台的PHP文件再做下数据接收的处理。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/upload/" rel="tag"># upload</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/22/关于arguments的用法/" rel="next" title="关于arguments的用法">
+                <i class="fa fa-chevron-left"></i> 关于arguments的用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/28/PHP制作彩色验证码/" rel="prev" title="PHP制作彩色验证码">
+                PHP制作彩色验证码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传统的form表单提交文件上传"><span class="nav-number">1.</span> <span class="nav-text">传统的form表单提交文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML页面代码"><span class="nav-number">1.1.</span> <span class="nav-text">HTML页面代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP页面代码"><span class="nav-number">1.2.</span> <span class="nav-text">PHP页面代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过FormData对象，然后利用XMLHttpRequest对象提交"><span class="nav-number">2.</span> <span class="nav-text">通过FormData对象，然后利用XMLHttpRequest对象提交</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html代码"><span class="nav-number">2.1.</span> <span class="nav-text">html代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js代码"><span class="nav-number">2.2.</span> <span class="nav-text">js代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
