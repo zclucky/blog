@@ -88,36 +88,30 @@
 
 
 <meta name="description" content="增
-
-
 增加一张表
 123CREATE TABLE `table_name`(  ...  )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 增加记录
-1234INSERT INTO `your_table_name`(`column_name`)VALUES(&amp;apos;your_value_one&amp;apos;),(&amp;apos;your_value_two&amp;apos;">
+1234INSERT INTO `your_table_name`(`column_name`)VALUES(&amp;apos;your_value_one&amp;apos;),(&amp;apos;your_value_two&amp;apos;);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql常用命令">
 <meta property="og:url" content="http://myxxqy.com/2017/03/09/mysql常用命令/index.html">
 <meta property="og:site_name" content="小小青喻's 博客">
 <meta property="og:description" content="增
-
-
 增加一张表
 123CREATE TABLE `table_name`(  ...  )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 增加记录
-1234INSERT INTO `your_table_name`(`column_name`)VALUES(&amp;apos;your_value_one&amp;apos;),(&amp;apos;your_value_two&amp;apos;">
-<meta property="og:updated_time" content="2017-03-09T05:47:47.600Z">
+1234INSERT INTO `your_table_name`(`column_name`)VALUES(&amp;apos;your_value_one&amp;apos;),(&amp;apos;your_value_two&amp;apos;);">
+<meta property="og:updated_time" content="2017-03-09T05:58:42.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql常用命令">
 <meta name="twitter:description" content="增
-
-
 增加一张表
 123CREATE TABLE `table_name`(  ...  )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 增加记录
-1234INSERT INTO `your_table_name`(`column_name`)VALUES(&amp;apos;your_value_one&amp;apos;),(&amp;apos;your_value_two&amp;apos;">
+1234INSERT INTO `your_table_name`(`column_name`)VALUES(&amp;apos;your_value_one&amp;apos;),(&amp;apos;your_value_two&amp;apos;);">
 
 
 
@@ -373,10 +367,7 @@
       
 
       
-        <ol>
-<li>增</li>
-</ol>
-<ul>
+        <h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><ul>
 <li><p>增加一张表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE `table_name`(</div><div class="line">  ...</div><div class="line">  )ENGINE=InnoDB DEFAULT CHARSET=utf8;</div></pre></td></tr></table></figure>
 </li>
@@ -403,10 +394,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ALTER TABLE `your_table_name`</div><div class="line">ADD FULLTEXT your_index_name(your_column_name);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol>
-<li>删</li>
-</ol>
-<ul>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><ul>
 <li><p>逐行删除</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">DELETE FORM `table_name`</div><div class="line">WHERE ...;</div></pre></td></tr></table></figure>
 </li>
@@ -423,10 +411,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ALTER TABLE `your_table_name`</div><div class="line">DROP INDEX your_index_name(your_column_name);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol>
-<li>改</li>
-</ol>
-<ul>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><ul>
 <li><p>变更数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">UPDATE `table_name`</div><div class="line">SET column_name=your_value</div><div class="line">WHERE ...;</div></pre></td></tr></table></figure>
 </li>
@@ -437,10 +422,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">UPDATE `your_table_name`</div><div class="line">AS a</div><div class="line">JOIN `your_anther_table_name`</div><div class="line">AS b</div><div class="line">SET a.column = b.anther_column</div><div class="line">WHERE a.id = b.a_id...;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol>
-<li>查</li>
-</ol>
-<ul>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><ul>
 <li><p>普通查询</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT `column_name_one`, `column_name_two`</div><div class="line">FROM `table_name`;</div></pre></td></tr></table></figure>
 </li>
@@ -453,15 +435,13 @@
 <li><p>同一个实例下跨库查询</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT *</div><div class="line">FROM database_name.your_table_name</div><div class="line">AS a</div><div class="line">JOIN another_database_name.your_another_table_name</div><div class="line">AS b</div><div class="line">WHERE a.column_name = b.column_name...;</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<ol>
 <li><p>复制一张表结构</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CREATE `your_table_name`</div><div class="line">LIKE `destination_table_name`;</div></pre></td></tr></table></figure>
 </li>
 <li><p>完全复制一张表：表结构+全部数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE `your_table_name`</div><div class="line">LIKE `destination_table_name`;</div><div class="line"></div><div class="line">INSERT INTO `your_table_name`</div><div class="line">SELECT *</div><div class="line">FROM `destination_table_name`;</div></pre></td></tr></table></figure>
 </li>
-</ol>
+</ul>
 <hr>
 <h3 id="附录：mysql常用命令"><a href="#附录：mysql常用命令" class="headerlink" title="附录：mysql常用命令"></a>附录：mysql常用命令</h3><ul>
 <li>登陆： mysql -h host -u username -p</li>
@@ -658,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#附录：mysql常用命令"><span class="nav-number">1.</span> <span class="nav-text">附录：mysql常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#增"><span class="nav-number">1.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删"><span class="nav-number">2.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改"><span class="nav-number">3.</span> <span class="nav-text">改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查"><span class="nav-number">4.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#附录：mysql常用命令"><span class="nav-number">4.1.</span> <span class="nav-text">附录：mysql常用命令</span></a></li></ol></li></ol></div>
             
 
           </div>
