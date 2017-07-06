@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/初识HTML/">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/五、CSS常用属性之浮动/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张超">
@@ -282,8 +282,849 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/06/初识HTML/" itemprop="url">
-                  初识HTML
+                <a class="post-title-link" href="/2017/07/06/五、CSS常用属性之浮动/" itemprop="url">
+                  五、CSS常用属性之浮动
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T17:52:59+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/06/五、CSS常用属性之浮动/" class="leancloud_visitors" data-flag-title="五、CSS常用属性之浮动">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>HTML、CSS基础课程系列</code> <code>CSS</code></p>
+<h1 id="CSS常用属性之浮动"><a href="#CSS常用属性之浮动" class="headerlink" title="CSS常用属性之浮动"></a>CSS常用属性之浮动</h1><p>前面我们了解了CSS的一些基础性的东西，那么CSS和HTML如何紧密相连的呢，今天我们就来介绍一下关于HTML文档如果通过CSS实现布局的。</p>
+<h2 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h2><p>在了解布局之前，我们先来了解下元素框类型，在html元素里面有两个元素：<code>&lt;div&gt;</code>和<code>&lt;span&gt;</code>标签，前者是自定义块级元素，后者是自定义内联元素，那么到底什么是块级元素，什么是内联元素呢，就是通过css的<code>display</code>属性判断的,display常用的值有以下这些：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">none</td>
+<td style="text-align:left">此元素不会被显示。</td>
+</tr>
+<tr>
+<td style="text-align:center">block</td>
+<td style="text-align:left">此元素将显示为块级元素，此元素前后会带有换行符。</td>
+</tr>
+<tr>
+<td style="text-align:center">inline</td>
+<td style="text-align:left">此元素会被显示为内联元素，元素前后没有换行符。</td>
+</tr>
+<tr>
+<td style="text-align:center">inline-block</td>
+<td style="text-align:left">行内块元素。（CSS2.1 新增的值）</td>
+</tr>
+</tbody>
+</table>
+<p>那么，块级元素和内联元素(又叫行内元素)有什么区别呢：</p>
+<ol>
+<li>是否独占整行。</li>
+<li>是否能单独设置高宽。(css的width和height属性)</li>
+</ol>
+<p>当然，<code>inline-block</code>不是独占整行的，但是能设置高宽。</p>
+<blockquote>
+<p>注意：<code>display:none</code>和另外一个<code>visibility:hidden</code>是不一样的，同样是隐藏元素，前者不占位置，后者要占位置。</p>
+</blockquote>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><h3 id="浮动的由来"><a href="#浮动的由来" class="headerlink" title="浮动的由来"></a>浮动的由来</h3><p>最初，浮动(<code>float</code>属性)被引入是由于WEB开发人员实现简单的布局，涉及文本以及一些图像，让文本围绕其周围，报纸上通常会看到这种布局。但是很快WEB开发人员意识到，不仅仅是图像，可以让很多的元素特别是块级元素都浮动起来，给他们配置其高宽，达到布局效果。</p>
+<h3 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h3><p>举个例子，先让一张图片浮动起来，文字在周围环绕。HTML代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>浮动的简单例子<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/float.jpg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>CSS代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">90%</span>;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">900px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">2</span>;</div><div class="line">  <span class="attribute">word-spacing</span>: <span class="number">0.1rem</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">img</span> &#123;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">margin-right</span>: <span class="number">30px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>保存并刷新您的浏览器，你会看到如下页面：<br><img src="/images/float.png" alt=""></p>
+<h3 id="多列浮动布局"><a href="#多列浮动布局" class="headerlink" title="多列浮动布局"></a>多列浮动布局</h3><p>浮动布局通常用作多个块级元素之间，我们成为多列浮动，尽管它非常好用，但是有一些奇怪的副作用要处理。如果让两个块级元素排列在同一行，就会使用浮动：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>我是盒子1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span>我是盒子2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> <span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">24px</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box1</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">    <span class="attribute">float</span>:left;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">400px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">float</span>:right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以很明显看出，现在两个盒子处于同一行，蓝色盒子在左边，红色盒子在右边。如果他们的宽度等于这一行的宽度，是不是就达到分割布局的目的了呢。但是副作用来了，如果在下面再添加一个<em>不浮动</em>的盒子3：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span>我是盒子3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box3</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">500px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">120px</span>;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>那么就是现在这个样子:<br><img src="/images/float2.png" alt=""><br>这就涉及到html元素<strong>文档流</strong>的概念，元素按照其在HTML中的位置决定排布的过程，叫做文档流（普通流<code>normal-flow</code>），通俗来讲，就是文本或图片排版是从上至下，从左往右的方式，这种方式就叫正常文档流。<br>而<strong>浮动（float）</strong>，首先要做的事情就是<strong>脱离文档流</strong>，相当于脱离水平面，浮起来了。也就是说，上面的盒子1和盒子2都浮动起来了，而盒子3是看不到盒子1和盒子2的，所以它遵从文档流的安排，就从顶端开始排下来，所以盒子3占到了盒子1所在的位置。</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>很明显了，使用浮动有这样的副作用，那么我们就需要清除它，清除浮动的属性叫<code>clear</code>，它的值有left、right和both三种。试试给上面的盒子3添加<code>clear:both</code>。</p>
+<h3 id="设置class值为-clear的div"><a href="#设置class值为-clear的div" class="headerlink" title="设置class值为.clear的div"></a>设置class值为.clear的div</h3><p>上面我们已经给盒子3添加了清除浮动，排版正常了，这时候如果给盒子3添加<code>margin-top</code>外边距你就会发现，它不会生效，要解决这个问题的话，我们通常的做法是给浮动元素下方添加一个class值为<code>clear</code>的空的div，如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>我是盒子1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span>我是盒子2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"clear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span>我是盒子3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"> <span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">24px</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box1</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">    <span class="attribute">float</span>:left;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">400px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">float</span>:right;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clear</span>&#123;</div><div class="line">    <span class="attribute">clear</span>:both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box3</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">500px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">120px</span>;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">    <span class="attribute">margin-top</span>:<span class="number">20px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在就正常了：<br><img src="/images/float3.png" alt="">   </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这节课我们学习了布局中的浮动布局，以及浮动布局中常见的一些问题。下节课我们会详细讲解html元素框，也就是盒模型一系列知识，包括外边距、内边距以及边框等。</p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>①. 测试前面学习的所有html元素是什么类型，块级元素还是内联元素？</p>
+<p>②. 测试上面找到的一些内联元素，是否能设置高宽？    </p>
+<p>③. 使用浮动布局完成占座作业。 </p>
+<blockquote>
+<p><em>教材编写</em> <em>myxxqy@gmail.com</em> <em>张超</em><br>                                <em>2017.07.06</em></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/四、开始使用CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/06/四、开始使用CSS/" itemprop="url">
+                  四、开始使用CSS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T17:52:47+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/06/四、开始使用CSS/" class="leancloud_visitors" data-flag-title="四、开始使用CSS">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>HTML、CSS基础课程系列</code> <code>CSS</code></p>
+<h1 id="开始使用CSS"><a href="#开始使用CSS" class="headerlink" title="开始使用CSS"></a>开始使用CSS</h1><h2 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h2><blockquote>
+<p>CSS(<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)层叠样式表，是您应该在学习HTML之后开始学习的第二种技术，HTML定义页面的内容和结构，而CSS用于装饰美化这些内容和结构，例如，您可以用CSS来修改文本的字体、颜色、大小和间距，添加动画等。</p>
+</blockquote>
+<h2 id="CSS格式"><a href="#CSS格式" class="headerlink" title="CSS格式"></a>CSS格式</h2><p>css的规则影响Web浏览器的显示方式，CSS的规则由以下格式组成：</p>
+<ul>
+<li>一组<em>属性</em>，属性和其值直接影响HTML内容的显示方式,以<code>key</code>和<code>value</code>键值对的形式。</li>
+<li>一个<em>选择器</em>，帮助您要选择的元素（或多个）。</li>
+</ul>
+<h2 id="快速示例"><a href="#快速示例" class="headerlink" title="快速示例"></a>快速示例</h2><p>上述描述可能有点抽象，下面我们通过一个快速的例子来看：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS sample experiment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>下面是CSS示例，对于<code>h1</code>标签生效的规则：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">    <span class="attribute">color</span>:blue;</div><div class="line">    <span class="attribute">background-color</span>:yellow;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid black;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>css的规则以<code>h1</code>选择器开始，意味着它将整个属性值应用于所有的<code>&lt;h1&gt;</code>元素，它包含三个属性和值：</p>
+<ul>
+<li><code>color:blue;</code>,将文本颜色设置为蓝色。</li>
+<li><code>background-color:yellow;</code>，将背景颜色设置为黄色。</li>
+<li><code>border:1px solid black;</code>，设置边框为1像素，实心，并且颜色是黑色的。</li>
+</ul>
+<p>那么，在Web浏览器中，上面的代码将会产生如下显示：<br><img src="/images/sample-css.png" alt=""><br>样式生效了，是不是很简单！</p>
+<h2 id="CSS书写位置"><a href="#CSS书写位置" class="headerlink" title="CSS书写位置"></a>CSS书写位置</h2><p>在上面我们用了一个简单的例子来达到修改样式的目的，当然css书写位置有几种：</p>
+<ol>
+<li><p><strong>内嵌样式</strong>：在一个标签内部的<code>style属性</code>中包含CSS的声明。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"border:1px solid black;"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>内部样式</strong>：在html文档的<code>head标签</code>包含一个<code>style标签</code>,里面进行CSS的书写。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS sample experiment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">h1</span>&#123;</div><div class="line">            <span class="attribute">border</span>:<span class="number">1px</span> solid black;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>外部样式</strong>：如上面的例子一样，将CSS写入进一个带有<code>.css</code>扩展名的单独文件中，然后通过<code>link标签</code>引入它。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面的书写位置推荐大家使用<strong>外部样式</strong>，这样可以达到html和css分离的效果。<br>尽量不要使用<strong>内嵌样式</strong>，这对于维护很糟糕（您可能需要每个文档多次更新相同的信息），而且会把html和css的信息进行混合，使CSS的代码难以阅读和理解。</p>
+<h2 id="CSS语法规则"><a href="#CSS语法规则" class="headerlink" title="CSS语法规则"></a>CSS语法规则</h2><p>css最基本的概念就分为<strong>属性</strong>和<strong>值</strong>，属性和值一起配对叫做<em>css声明</em> ,一个花括号里面可能会有很多css声明，他们和<strong>选择器</strong>一起组成了css的规则。<br><img src="/images/css.png" alt="">   </p>
+<h2 id="CSS的注释"><a href="#CSS的注释" class="headerlink" title="CSS的注释"></a>CSS的注释</h2><p>css的注释是以<code>/*</code>开头，以<code>*/</code>结束，中间的任何字符都不会被解析,例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">20px</span>; <span class="comment">/* 给body元素添加字体大小为20像素 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><p>上面的例子我们全部使用的是标签选择器来举例，下面我们介绍一些常用的选择器：</p>
+<ul>
+<li><strong>基础</strong>选择器，又叫简单选择器，可以根据元素类型匹配一个或多个元素。有标签、id、class等。</li>
+<li><strong>伪类</strong>选择器，匹配元素在某个状态时存在的一个或多个元素。如鼠标悬浮、获得焦点等。</li>
+<li><strong>伪元素</strong>选择器，匹配与元素相关的特定位置内容的一个或多个部分。如元素之前或之后生成的内容。</li>
+<li><strong>属性</strong>选择器，根据元素的<code>属性/属性值</code>匹配一个或多个元素。</li>
+<li><strong>关系</strong>选择器，这些不是完全的选择器，只是将上述选择器一个或多个组合在一起使用，如父子选择器，后代选择器等。</li>
+</ul>
+<h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h4><p>标签选择器也叫<strong>元素选择器</strong>，这是对于HTML元素最简单的一种选择器，直接写标签名加上CSS声明就行了：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">font-weight</span>:bold; <span class="comment">/* 给所有的p标签 字体加粗 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><p>id选择器由一个<code>#</code>号后面跟上id属性的值组成，任何元素都可以设置<strong>唯一</strong>的id属性，这是最有效的选择单个元素的办法。例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"hello"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"hi"</span>&gt;</span>Hi,Good morning!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#hello</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">'微软雅黑'</span>; <span class="comment">/* 设置字体集为 微软雅黑*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-id">#hi</span>&#123;</div><div class="line">    <span class="attribute">text-algin</span>:center; <span class="comment">/* 设置该元素内的文本 水平位置居中  */</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>重要提示</strong>，html文档中的id值必须是唯一的，重复的id值会导致浏览器的未知行为。</p>
+</blockquote>
+<h4 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h4><p>class选择器又叫类选择器，它是由一个点<code>.</code>和类名组成，值得注意的是，不同的元素可以有相同的class，同一个元素也可以有多个class的值，以空格分开：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"first item"</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"second item"</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"third"</span>&gt;</span>JAVASCRIPT<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>item<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="selector-class">.first</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">'黑体'</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">24px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span>&#123;</div><div class="line">    <span class="attribute">text-decoration</span>: none; <span class="comment">/* 去除下划线 */</span></div><div class="line">    <span class="attribute">color</span>:green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样将会造成如下输出：<br><img src="/images/class.png" alt="">    </p>
+<h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><p>在很多语言都有通配符，也就是这个符号<code>*</code>，在CSS里面它代表匹配所有的标签或元素。由于很少有样式作用于页面的所有元素，所以它常常和其他选择器组合使用。</p>
+<blockquote>
+<p><strong>提示</strong>，使用通配符选择器要小心，因为他匹配所有的元素，在大型页面中它可能会对性能造成明显的影响，导致网页速度比预期慢，所以，尽量少用。</p>
+</blockquote>
+<h3 id="关系选择器"><a href="#关系选择器" class="headerlink" title="关系选择器"></a>关系选择器</h3><p>关系选择器，又叫<strong>组合</strong>选择器，下面我们介绍常用的三种关系：</p>
+<ul>
+<li>子选择器，使用<code>&gt;</code>符号，匹配该元素的直接子元素。</li>
+<li>后代选择器，使用空格符号，匹配该元素的所有后代元素。（包含直接后代，孙子等。）</li>
+<li>分组选择器，使用<code>,</code>符号，表示前一个和后一个选择器都适用于该css规则。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">span</span>&#123;</div><div class="line">   <span class="attribute">color</span>:red; <span class="comment">/* 设置div下的直接子元素：span标签里面的文本颜色为红色 */</span> </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span> <span class="selector-tag">span</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">24px</span>;  <span class="comment">/* 设置div下的所有span标签里面的字体大小为24像素 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span>,<span class="selector-tag">a</span>&#123;</div><div class="line">    <span class="attribute">font-weight</span>:bold;  <span class="comment">/* 设置字体加粗，适用于span标签和a标签 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>伪类选择器是在选择器后面加上冒号<code>:</code>，指定<em>当它处于特定状态时</em>才对所选元素进行样式化，下面介绍两种常用的伪类选择器：</p>
+<ul>
+<li><code>:hover</code>，鼠标悬浮触发。</li>
+<li><code>:focus</code>，鼠标焦点触发。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">30px</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 当鼠标悬浮到h1元素上时，字体颜色变成白色，背景色变成黑色 */</span></div><div class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">color</span>:white;</div><div class="line">    <span class="attribute">background-color</span>:black;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 当在input元素上获得鼠标焦点时 触发 */</span></div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span>&#123;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">3px</span> black; <span class="comment">/* 添加一些阴影 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这节课我们学习了css的语法规则，以及它的常用选择器。下节课程我们会继续学习css的常见属性以及一些小技巧！</p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>①. 测试CSS的书写位置。</p>
+<p>②. 测试这节课学习的所有选择器。    </p>
+<p>③. 使用html标签和今天学习的css内容制作一份简历,要求使用外部样式。  </p>
+<blockquote>
+<p><em>教材编写</em> <em>myxxqy@gmail.com</em> <em>张超</em><br>                                <em>2017.07.04</em></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/三、表格和表单/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/06/三、表格和表单/" itemprop="url">
+                  三、表格和表单
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T17:52:32+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/06/三、表格和表单/" class="leancloud_visitors" data-flag-title="三、表格和表单">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>HTML、CSS基础课程系列</code> <code>HTML</code></p>
+<h1 id="表格和表单"><a href="#表格和表单" class="headerlink" title="表格和表单"></a>表格和表单</h1><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><blockquote>
+<p>表格，是由行和列组成的一组结构化数据(<em>tabular data</em>),表格允许您快速地查找不同类型数据之间联系的值。</p>
+</blockquote>
+<h3 id="创建第一张表格"><a href="#创建第一张表格" class="headerlink" title="创建第一张表格"></a>创建第一张表格</h3><p>表格的所有内容在放在<code>&lt;table&gt;&lt;/table&gt;</code>标签之间，<code>&lt;table&gt;</code>标签下面分为很多行<code>&lt;tr&gt;</code>,每一行里面又分为很多单元格<code>&lt;td&gt;</code>，没错，单元格就是表格里面最小的容器。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第一行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第二行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第三行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>上面这份表格在浏览器中打开，并不是您想象中的样子，它是这样的：<br><img src="/images/table.png" alt=""><br>表格的美化工作通常都和<code>css</code>分不开，这里我们还没学习到<code>css</code>，那么我们就使用表格自带的一些属性来稍微渲染下它把：</p>
+<ul>
+<li><strong>border</strong>属性，表格的边框。</li>
+<li><strong>width</strong>属性，表格的宽度。</li>
+<li><strong>height</strong>属性，表格的高度。</li>
+</ul>
+<p>上面几个属性的值的单位，都是像素(<code>px</code>)，后面<code>css</code>的课程中大家会学习到。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第一行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第二行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第三行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>那么，打开浏览器自己试试吧！</p>
+<h3 id="表格中文本的位置"><a href="#表格中文本的位置" class="headerlink" title="表格中文本的位置"></a>表格中文本的位置</h3><p>通常我们会调整表格中文本的位置，这里有两个常用的位置属性：</p>
+<ul>
+<li><strong>algin</strong>属性：文本水平方向位置，它的值有<code>left</code>、<code>center</code>、<code>right</code>，默认值是<code>left</code>。</li>
+<li><strong>valgin</strong>属性：文本垂直方向的位置，它的值有<code>top</code>,<code>middle</code>,<code>bottom</code>，默认值是<code>middle</code>。</li>
+</ul>
+<p>当然，这两个属性可以放在行<code>&lt;tr&gt;</code>上，也可以放在单元格<code>&lt;td&gt;</code>上。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第一行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span> <span class="comment">&lt;!-- 表示第一行所有的文本 水平位置居中 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第二行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">valign</span>=<span class="string">"top"</span>&gt;</span>我是第二行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="comment">&lt;!-- 居于顶部 只作用于这个单元格   --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 第三行 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第三列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="允许单元格跨多个行和列"><a href="#允许单元格跨多个行和列" class="headerlink" title="允许单元格跨多个行和列"></a>允许单元格跨多个行和列</h3><p>不是所有的表格都是行和列全部对齐的，有时候我们希望某个单元格合并多行或合并多列，那么就需要用到下面两个属性：</p>
+<ul>
+<li><strong>rowspan</strong>属性：行合并，对同列不同行的数据进行合并。</li>
+<li><strong>colspan</strong>属性：列合并，对同行不同列的数据进行合并。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">"3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>7<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>8<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>上面这个表格，我给所有的行都添加了<code>align=&quot;center&quot;</code>属性，让每一行的数据都水平居中，给<code>1</code>所在的位置添加了<code>colspan=&quot;2&quot;</code>列合并，合并的单元格数量为2，给<code>3</code>所在的单元格添加了<code>rowspan=&quot;3&quot;</code>行合并，把下面两行的<code>6</code>和<code>9</code>合并掉了，如下图:<br><img src="/images/col_row.png" alt="">   </p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><h3 id="什么是表单"><a href="#什么是表单" class="headerlink" title="什么是表单"></a>什么是表单</h3><blockquote>
+<p>HTML表单是用户和网站或应用程序之间交互要点之一，它允许用户将数据提交到网站，大部分是提交到web服务器上。HTML表单是由一个或多个小部件组成，这些小部件可以是文本框、选择菜单、复选框或按钮，学习如何正确的使用它们，指示用户输入正确的数据。</p>
+</blockquote>
+<h3 id="创建一个注册表单"><a href="#创建一个注册表单" class="headerlink" title="创建一个注册表单"></a>创建一个注册表单</h3><p>所有的HTML表单都是以<form>元素开始的：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"index.html"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></form></p>
+<p>这就正式定义了一个表单元素，它就像个<code>&lt;div&gt;</code>或<code>&lt;p&gt;</code>元素一样，是个容器。所有的表单小部件都放在<code>&lt;form&gt;</code>里面。它有很多属性，单最好总是至少设置<code>action</code>或<code>method</code>属性：</p>
+<ul>
+<li><strong>action</strong>属性：提交表单时收集的数据发送的地址(URL)。</li>
+<li><strong>method</strong>属性：定义http协议发送的提交方式（get 或 post）。</li>
+</ul>
+<p>关于这些属性的具体原理，大家会在后续的课程里面了解到。<br>下面我们来正式的添加表单的小部件到<code>&lt;form&gt;</code>里面：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"index.html"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>用户名：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>邮箱：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"psw"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>重复密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"repsw"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>一句话介绍自己？<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"remember"</span>&gt;</span> </div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>记住我<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"reset"</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>关于这些常用的小部件我们需要了解到：</p>
+<ul>
+<li><strong>input</strong>：表单项，这个标签是个空元素，它因为<code>type</code>属性而表现出不同的含义：<ul>
+<li><em>type=”text”</em>，文本输入框。</li>
+<li><em>type=”email”</em>，邮件输入框。</li>
+<li><em>type=”password”</em>，密码输入框。</li>
+<li><em>type=”radio”</em>，单选框。</li>
+<li><em>type=”checkbox”</em>，复选框。<br>同时，它的<code>name</code>属性和<code>value</code>属性也非常重要。</li>
+</ul>
+</li>
+<li><strong>textarea</strong>：文本域，这个标签可以让用户输入大量文本内容。</li>
+<li><strong>button</strong>：按钮，和<code>input</code>一样，也是<code>type</code>属性产生不同的效果：<ul>
+<li><em>type=”submit”</em>，提交按钮，这是默认值。</li>
+<li><em>type=”reset”</em>，重置按钮。</li>
+<li><em>type=”button”</em>，这，看起来很傻，不过在后续的<code>javascript</code>课程里面创建自定义按钮非常有用。</li>
+</ul>
+</li>
+<li><strong>label</strong>：这个标签有着非常重要的属性<code>for</code>，它所对应的是一个表单里面表单元素的<code>id</code>的值，在<code>css</code>课程中，我们会详细讲解<code>id</code>属性。<br>这些小部件还有一些共同的属性：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性名称</th>
+<th style="text-align:left">范围</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">所有表单元素</td>
+<td style="text-align:left">元素的名称，提交的时候会使用。</td>
+</tr>
+<tr>
+<td style="text-align:left">value</td>
+<td style="text-align:left">所有表单元素</td>
+<td style="text-align:left">元素所对应的初始值。</td>
+</tr>
+<tr>
+<td style="text-align:left">placeholder</td>
+<td style="text-align:left">文本输入字段</td>
+<td style="text-align:left">显示在文本输入框内的文本，简要描述了该文本框的用途。</td>
+</tr>
+</tbody>
+</table>
+<p>如上所述，有很多不同类型的表单元素，不需要一次性记住所有的详细信息，要在<em>实践</em>中去运用他们。</p>
+<blockquote>
+<p>注意：禁止将表单嵌套在另外一个表单里面，嵌套可能会导致浏览器以不可预知的方式运行。</p>
+</blockquote>
+<h2 id="常用实体"><a href="#常用实体" class="headerlink" title="常用实体"></a>常用实体</h2><p>html实体是一段文本串，它是一<code>&amp;</code>开始，以英文小写<code>;</code>结束的字符。为什么要使用它，因为对于一些特殊的符号，浏览器会解析它，例如在html里面<code>&lt;</code>和<code>&gt;</code>符号会被解析成html标签的组成部分。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这段文字中间&amp;nbsp;好像&amp;nbsp;有一些空格。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>下面是一些常用实体： </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符</th>
+<th style="text-align:left">实体</th>
+<th style="text-align:left">注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left"><code>&amp;amp;</code></td>
+<td style="text-align:left">解释实体或字符的开始符号。</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left"><code>&amp;lt;</code></td>
+<td style="text-align:left">解释为标签的开头。</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left"><code>&amp;gt;</code></td>
+<td style="text-align:left">解释为标签的结束。</td>
+</tr>
+<tr>
+<td style="text-align:left">“</td>
+<td style="text-align:left"><code>&amp;quot;</code></td>
+<td style="text-align:left">解释为属性值的开始和结束。</td>
+</tr>
+<tr>
+<td style="text-align:left">&copy;</td>
+<td style="text-align:left"><code>&amp;copy;</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">&reg;</td>
+<td style="text-align:left"><code>&amp;reg;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这节课程了解了表格和表单的创建，以及如何书写一些常用的实体以避免被浏览器解析特殊字符。下节课程，我们会详细讲解关于<code>css</code>的使用。</p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>①. 测试这节课程中所有的标签的使用。</p>
+<p>②. 使用表格的内容制作下面这段网页：<br>   <img src="/images/work/示例.PNG" alt="">    </p>
+<p>③. 使用表单的内容制作下面这段网页：<br>   <img src="/images/表单实例图.png" alt="">   </p>
+<blockquote>
+<p><em>教材编写</em> <em>myxxqy@gmail.com</em> <em>张超</em><br>                                <em>2017.06.30</em></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/二、HTML常用标签/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/06/二、HTML常用标签/" itemprop="url">
+                  二、HTML常用标签
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T17:52:12+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/06/二、HTML常用标签/" class="leancloud_visitors" data-flag-title="二、HTML常用标签">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>HTML、CSS基础课程系列</code> <code>HTML</code></p>
+<h1 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h1><h2 id="标题和段落"><a href="#标题和段落" class="headerlink" title="标题和段落"></a>标题和段落</h2><p>很多的结构化文本都是由标题(<em>Headings</em>)和段落(<em>Paragraphs</em>)组成，包括学习教材、报纸、新闻阅读类的APP。<br>在HTML中，每个段落都必须包含在一个<code>&lt;p&gt;</code>元素中，如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>每个标题都必须包含在标题元素中：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是一个主标题!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>标题元素有六个，分别为<code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、<code>&lt;h4&gt;</code>、<code>&lt;h5&gt;</code>、<code>&lt;h6&gt;</code>，每个标题代表的含义也不相同，h1代表主标题，h2代表副标题，h3代表副标题，按照重要性依次类推。</p>
+<blockquote>
+<p>注意：标题很重要，请确保html heading 标签只用于标题，而不是仅仅为了产生加粗或大号的文本使用标题！  </p>
+</blockquote>
+<h3 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h3><p>语义依赖于我们周围的任何地方，我们依靠经验来判断日常对象的功能是什么：当我们看到某些东西时，我们就知道它的功能是什么。举个例子，比如您看到一份<strong>涂抹了黄油的面包</strong>，马上就会联想到吃、早餐、流口水等现象。<br>类似的，我们需要确保我们使用的是正确的元素，给我们内容正确的意义，功能或外观。那么，<code>&lt;h1&gt;</code>标签也是一个语义元素，它包含<strong>页面顶级标题</strong>的含义：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是本页面顶级标题！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>通常情况，h1标签会有一个较大的字体，使其看起来像一个标题，更重要的是，语义的价值会体现在更多地方，例如搜索引擎等等。<br>但是，后面课程如果大家学习了<code>css</code>,那么也可以使任何元素看起来像一个标题：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"font-size: 32px; margin: 21px 0;"</span>&gt;</span>我也是一个顶级标题吗？<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这是一个<code>&lt;span&gt;</code>标签，它没有语义。仅仅是当你想使用<code>css</code>或<code>javascript</code>时，它可以用来包装内容，而不给予任何的含义。<br>由于它没有任何含义，也不会得到上述说的语义化的任何好处。（大家会在后续的课程中学习到相关<code>css</code>的内容）</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表(<em>Lists</em>)，也是无处不在。论文的目录、领导讲话的要点、医生开具的药物清单等等，列表主要有如下两种：</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<code>&lt;ul&gt;</code>用于标记项目顺序无关的项目列表，以药物清单为例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小儿氨酚黄那敏颗粒<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小儿止咳糖浆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>双黄连口服液<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小儿清肺口服液<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>每个无序列表都是从<code>&lt;ul&gt;</code>开始，这包含所有的列表项<code>&lt;li&gt;</code>，所有的内容都在<code>&lt;li&gt;</code>(<em>list item</em>)元素中。</p>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>无序列表<code>&lt;ol&gt;</code>用于标记项目是<em>有序的</em>，以日程表为例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>去菜市场买菜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>接女儿放学<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>准备晚饭<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>和老婆躺床上看电视<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>结构和无序列表相同，但是列表是包含在<code>&lt;ol&gt;</code>中，而不是<code>&lt;ul&gt;</code>里面。</p>
+<h2 id="重要性"><a href="#重要性" class="headerlink" title="重要性"></a>重要性</h2><p>在人类的语言中，不管是中文还是英文，都有很多强调某些词语来改变句子的含义。在html中，提供了很多这种语义化元素，这里我们介绍集中常见的元素。<br>下面我们来看一个经典的例子：</p>
+<blockquote>
+<p>（1）<strong>我</strong>没说他偷了你的iphone——可是有人这么说的。<br>（2）我<strong>没</strong>说他偷了你的iphone——我确实没有这么说。<br>（3）我没<strong>说</strong>他偷了你的iphone——可是我是这么暗示的。<br>（4）我没说<strong>他</strong>偷了你的iphone——可是有人偷了。<br>（5）我没说他<strong>偷了</strong>你的iphone——可能是他借去了。<br>（6）我没说他偷了<strong>你的</strong>iphone——他偷了别人的iphone。<br>（7）我没说他偷了你的<strong>iphone</strong>——他偷了别的东西。    </p>
+</blockquote>
+<p>同样一句话，语气重读不同，意思就大为不同。这里强调重要的话语，我们使用<code>&lt;strong&gt;</code>(<em>strong important</em>)元素来标记这些实例，浏览器默认将其作为粗体文本。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我<span class="tag">&lt;<span class="name">strong</span>&gt;</span>很<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>喜欢你！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你不要令我<span class="tag">&lt;<span class="name">strong</span>&gt;</span>失望<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="换行和分割线"><a href="#换行和分割线" class="headerlink" title="换行和分割线"></a>换行和分割线</h2><h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>在前面的课程里，相信大家已经发现了，在html里面直接按回车键(<code>Enter</code>)换行，而显示在浏览器上面是没有效果的。那么，如何在浏览器上面换行呢。<br>这里就需要用到<code>&lt;br&gt;</code>标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>我是上面一行的<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>我是下面一行的<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>像<code>&lt;br&gt;</code>这种，只有开始标签，没有内容和结束标签的元素叫做<strong>空元素</strong>，也叫自闭合标签。</p>
+<blockquote>
+<p>注意，使用空的<code>&lt;p&gt;&lt;/p&gt;</code>段落标签来换行是个坏习惯，用<code>&lt;br&gt;</code>标签去代替它。   </p>
+</blockquote>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>同样是空元素的<code>&lt;hr&gt;</code>是分割线标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>一些普通内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>另外一些普通内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>html有个特殊的标签，叫做注释标签<code>&lt;!-- --&gt;</code>，凡是在注释标签里面的内容都会被浏览器忽视掉。比如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 我是html注释内容 我不会在浏览器中显示 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我是正常的文本内容 我会在浏览器上正常显示<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>上面的代码可以看出，第一行不会在浏览器中展示，第二行将在浏览器中正常显示。<br>注释的作用就是，可以对您的代码进行解释，这样做的好处是帮助记忆理解您或者同事的代码，当你在大型项目中时尤其有用。</p>
+<h2 id="超链接和图片"><a href="#超链接和图片" class="headerlink" title="超链接和图片"></a>超链接和图片</h2><h3 id="什么是超链接"><a href="#什么是超链接" class="headerlink" title="什么是超链接"></a>什么是超链接</h3><p>超链接非常重要，它使WEB称为了网络，超链接是网络提供的最令人激动的创新之一，<br>它允许我们将文档链接到我们想要的任何文档(或其他资源)，也可以通过链接，访问到浏览器的另一个网址(<em>URL</em>)。</p>
+<h3 id="如何使用超链接"><a href="#如何使用超链接" class="headerlink" title="如何使用超链接"></a>如何使用超链接</h3><p><code>&lt;a&gt;</code>标签就是超链接，当然它和其他元素不同的是，它有一个<strong>必须的</strong>属性<code>href</code>，这个属性链接跳转指向的地址。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我想去<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com"</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span>搜索一些东西。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>它给我们一个结果：</p>
+<blockquote>
+<p>一个指向百度页面的网址 <a href="https://www.baidu.com" target="_blank" rel="external">百度</a></p>
+</blockquote>
+<h3 id="URL和路径的快速入门"><a href="#URL和路径的快速入门" class="headerlink" title="URL和路径的快速入门"></a>URL和路径的快速入门</h3><p>我们已经发现，<code>&lt;a&gt;</code>标签的<code>href</code>属性会链接一个地址，那么这个地址是怎么分类的呢：</p>
+<h4 id="绝对路径地址"><a href="#绝对路径地址" class="headerlink" title="绝对路径地址"></a>绝对路径地址</h4><p>绝对路径地址，是指完整的描述路径的地址，一般指向由其在网络上的绝对位置定义的位置，包括协议和域名，以<code>http</code>或<code>https</code>开头的地址。<br>在本地的windows操作系统下，以<code>C:/</code>或<code>D:/</code>开头的地址也是绝对地址。又或者，在linux或类linux操作系统下，以<code>/</code>开头的都是绝对地址。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- windows操作系统下 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"D:/lesson/new/HTML&amp;CSS/lesson1/HTML常用标签.html"</span>&gt;</span>本文件位置<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- linux操作系统下--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/var/www/html/index.html"</span>&gt;</span>web服务器主页地址<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="相对路径地址"><a href="#相对路径地址" class="headerlink" title="相对路径地址"></a>相对路径地址</h4><p>相对路径地址就跟操作系统的目录息息相关了，主要分为下面几种情况：   </p>
+<ul>
+<li><p><strong>同级目录</strong>：当前目录或文件夹下有着另外一个web文件<code>index2.html</code>,访问它的方式是<code>直接写上文件名称</code> 或 <code>./文件名称</code>,这里的<code>./</code>代表当前目录。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./index2.html"</span>&gt;</span>访问index2.html页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>上级目录</strong>：如果<code>index2.html</code>这个文件在当前文件的上一级目录，访问方式是<code>../文件名称</code>。如果是上级的上级，就使用<code>../../</code>，同理可推多个上级。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"../index2.html"</span>&gt;</span>访问上级目录的index2.html页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>下级目录</strong>：如果<code>index2.html</code>这个文件在当前目录的<code>pages</code>这个目录下，那么访问方式是<code>./pages/index2.html</code>，这里加上目录名称即可。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./pages/index2.html"</span>&gt;</span>访问pages目录下的index2.html页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><blockquote>
+<p>最早，网络知识文字，这很无聊，幸运的是，页面可以使用图像了。</p>
+</blockquote>
+<p>在网页上放置图像，我们使用<code>&lt;img&gt;</code>这个元素，这也是一个空元素(意味着没有内容和结束标签)，<br>但是它同<code>&lt;a&gt;</code>标签很类似，都有一个<strong>必须的</strong>属性<code>src</code>(<em>source</em> 资源)，<code>src</code>属性包含一个指向图像资源地址的路径。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/panda.jpg"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>那么它显示出来的样子，一只睡觉的熊猫：<br><img src="/images/panda.jpg" alt=""><br>同样的，凡是看到有路径地址的地方，都有绝对路径和相对路径之分，和<code>&lt;a&gt;</code>标签的<code>href</code>属性具有相同的地方。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这节课程应该给你一个很好的了解如何开始标记HTML中的文本，并介绍了这方面的一些最重要的元素。<br>在这一领域有很多的语义元素，我们将在后面的课程中看到更多的语义元素。</p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>①. 利用这节课所学知识，使用html文档写一份求职信，要求标题、段落分明，结合图片，突出自己优势重点。   </p>
+<blockquote>
+<p><em>教材编写</em> <em>myxxqy@gmail.com</em> <em>张超</em><br>                                <em>2017.06.28</em></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/一、初识HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/06/一、初识HTML/" itemprop="url">
+                  一、初识HTML
                 </a>
               
             
@@ -317,7 +1158,7 @@
 
           
           
-             <span id="/2017/07/06/初识HTML/" class="leancloud_visitors" data-flag-title="初识HTML">
+             <span id="/2017/07/06/一、初识HTML/" class="leancloud_visitors" data-flag-title="一、初识HTML">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1125,544 +1966,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2016/10/18/新浪云git提交免输入用户名和密码的办法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小小青喻's 博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/18/新浪云git提交免输入用户名和密码的办法/" itemprop="url">
-                  新浪云git提交免输入用户名和密码的办法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-18T23:15:11+08:00">
-                2016-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/10/18/新浪云git提交免输入用户名和密码的办法/" class="leancloud_visitors" data-flag-title="新浪云git提交免输入用户名和密码的办法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="更改环境变量"><a href="#更改环境变量" class="headerlink" title="更改环境变量"></a>更改环境变量</h1><p>  找到<em>我的电脑</em>，win10下叫<em>此电脑</em>,右键–属性–高级系统设置–环境变量–用户变量–新建，<br>  然后设置：<br>  – 变量名：HOME<br>  – 变量值：%USERPROFILE%</p>
-<h1 id="新建-netrc文件"><a href="#新建-netrc文件" class="headerlink" title="新建_netrc文件"></a>新建_netrc文件</h1><p>  找到刚才建立的用户变量的目录，开始–运行–%HOME%，进入目录，建立一个_netrc文件，填写<br>  用户名和密码，然后保存退出，就OK了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">machine git.sinacloud.com</div><div class="line"> login 你的登录账号(一般是新浪云的登录账号)</div><div class="line"> password 你的提交密码(一般是新浪云的安全密码)</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2016/08/04/微信测试接口开发/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小小青喻's 博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/04/微信测试接口开发/" itemprop="url">
-                  微信测试接口开发
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-04T16:18:18+08:00">
-                2016-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/08/04/微信测试接口开发/" class="leancloud_visitors" data-flag-title="微信测试接口开发">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="微信接口开发"><a href="#微信接口开发" class="headerlink" title="微信接口开发"></a>微信接口开发</h1><blockquote>
-<p> <strong>准备工作</strong></p>
-<ul>
-<li>申请微信测试账号</li>
-<li>申请新浪云平台账号    </li>
-</ul>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/04/微信测试接口开发/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2016/07/28/PHP制作彩色验证码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小小青喻's 博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/28/PHP制作彩色验证码/" itemprop="url">
-                  PHP制作彩色验证码
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-28T16:52:37+08:00">
-                2016-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/07/28/PHP制作彩色验证码/" class="leancloud_visitors" data-flag-title="PHP制作彩色验证码">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="验证码的类"><a href="#验证码的类" class="headerlink" title="验证码的类"></a>验证码的类</h1><p>制作了一个名叫<code>Verification.class.php</code>的类，代码如下<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/07/28/PHP制作彩色验证码/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2016/07/05/PHP文件上传upload/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小小青喻's 博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/05/PHP文件上传upload/" itemprop="url">
-                  PHP文件上传upload
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-05T22:22:16+08:00">
-                2016-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/07/05/PHP文件上传upload/" class="leancloud_visitors" data-flag-title="PHP文件上传upload">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="传统的form表单提交文件上传"><a href="#传统的form表单提交文件上传" class="headerlink" title="传统的form表单提交文件上传"></a>传统的form表单提交文件上传</h1><h2 id="HTML页面代码"><a href="#HTML页面代码" class="headerlink" title="HTML页面代码"></a>HTML页面代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span> = <span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"index.php/User/upload"</span> <span class="attr">enctype</span>=<span class="string">'multipart/form-data'</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span>  <span class="attr">name</span>=<span class="string">"uploadfile"</span>/ &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>表单中<code>enctype=&quot;multipart/form-data&quot;</code>的意思，是设置表单的MIME编码。默认情况，这个编码格式是<code>application/x-www-form-urlencoded</code>，不能用于文件上传；只有使用了<code>multipart/form-data</code>，才能完整的传递文件数据，进行下面的操作。</p>
-<h2 id="PHP页面代码"><a href="#PHP页面代码" class="headerlink" title="PHP页面代码"></a>PHP页面代码</h2><p>这里我做了路径路由，这是后端<code>index.php</code>文件的代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$arr    = explode(<span class="string">"/"</span>,ltrim($_SERVER[<span class="string">'PATH_INFO'</span>],<span class="string">"/"</span>));</div><div class="line">$head = $arr[<span class="number">0</span>].<span class="string">"Controller"</span>;</div><div class="line">$con    = $arr[<span class="number">1</span>];</div><div class="line"><span class="keyword">require</span> <span class="string">"$head.class.php"</span>;</div><div class="line">$m = <span class="keyword">new</span> $head();</div><div class="line">$m-&gt;$con();</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/07/05/PHP文件上传upload/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1712,7 +2015,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

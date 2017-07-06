@@ -1,0 +1,879 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML、CSS基础课程系列 CSS
+开始使用CSSCSS简介
+CSS(Cascading Style Sheets)层叠样式表，是您应该在学习HTML之后开始学习的第二种技术，HTML定义页面的内容和结构，而CSS用于装饰美化这些内容和结构，例如，您可以用CSS来修改文本的字体、颜色、大小和间距，添加动画等。
+
+CSS格式css的规则影响Web浏览器的显示方式，CSS的规则由以下格式组成：
+
+一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四、开始使用CSS">
+<meta property="og:url" content="http://myxxqy.com/2017/07/06/四、开始使用CSS/index.html">
+<meta property="og:site_name" content="小小青喻's 博客">
+<meta property="og:description" content="HTML、CSS基础课程系列 CSS
+开始使用CSSCSS简介
+CSS(Cascading Style Sheets)层叠样式表，是您应该在学习HTML之后开始学习的第二种技术，HTML定义页面的内容和结构，而CSS用于装饰美化这些内容和结构，例如，您可以用CSS来修改文本的字体、颜色、大小和间距，添加动画等。
+
+CSS格式css的规则影响Web浏览器的显示方式，CSS的规则由以下格式组成：
+
+一">
+<meta property="og:image" content="http://myxxqy.com/images/sample-css.png">
+<meta property="og:image" content="http://myxxqy.com/images/css.png">
+<meta property="og:image" content="http://myxxqy.com/images/class.png">
+<meta property="og:updated_time" content="2017-07-06T09:58:59.736Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四、开始使用CSS">
+<meta name="twitter:description" content="HTML、CSS基础课程系列 CSS
+开始使用CSSCSS简介
+CSS(Cascading Style Sheets)层叠样式表，是您应该在学习HTML之后开始学习的第二种技术，HTML定义页面的内容和结构，而CSS用于装饰美化这些内容和结构，例如，您可以用CSS来修改文本的字体、颜色、大小和间距，添加动画等。
+
+CSS格式css的规则影响Web浏览器的显示方式，CSS的规则由以下格式组成：
+
+一">
+<meta name="twitter:image" content="http://myxxqy.com/images/sample-css.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://myxxqy.com/2017/07/06/四、开始使用CSS/"/>
+
+
+
+
+
+  <title> 四、开始使用CSS | 小小青喻's 博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c6160ab5d13757b482743314a4624b03";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小小青喻's 博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">沉静，沉淀，缓步向前！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/四、开始使用CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                四、开始使用CSS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T17:52:47+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/06/四、开始使用CSS/" class="leancloud_visitors" data-flag-title="四、开始使用CSS">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>HTML、CSS基础课程系列</code> <code>CSS</code></p>
+<h1 id="开始使用CSS"><a href="#开始使用CSS" class="headerlink" title="开始使用CSS"></a>开始使用CSS</h1><h2 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h2><blockquote>
+<p>CSS(<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)层叠样式表，是您应该在学习HTML之后开始学习的第二种技术，HTML定义页面的内容和结构，而CSS用于装饰美化这些内容和结构，例如，您可以用CSS来修改文本的字体、颜色、大小和间距，添加动画等。</p>
+</blockquote>
+<h2 id="CSS格式"><a href="#CSS格式" class="headerlink" title="CSS格式"></a>CSS格式</h2><p>css的规则影响Web浏览器的显示方式，CSS的规则由以下格式组成：</p>
+<ul>
+<li>一组<em>属性</em>，属性和其值直接影响HTML内容的显示方式,以<code>key</code>和<code>value</code>键值对的形式。</li>
+<li>一个<em>选择器</em>，帮助您要选择的元素（或多个）。</li>
+</ul>
+<h2 id="快速示例"><a href="#快速示例" class="headerlink" title="快速示例"></a>快速示例</h2><p>上述描述可能有点抽象，下面我们通过一个快速的例子来看：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS sample experiment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>下面是CSS示例，对于<code>h1</code>标签生效的规则：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">    <span class="attribute">color</span>:blue;</div><div class="line">    <span class="attribute">background-color</span>:yellow;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid black;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>css的规则以<code>h1</code>选择器开始，意味着它将整个属性值应用于所有的<code>&lt;h1&gt;</code>元素，它包含三个属性和值：</p>
+<ul>
+<li><code>color:blue;</code>,将文本颜色设置为蓝色。</li>
+<li><code>background-color:yellow;</code>，将背景颜色设置为黄色。</li>
+<li><code>border:1px solid black;</code>，设置边框为1像素，实心，并且颜色是黑色的。</li>
+</ul>
+<p>那么，在Web浏览器中，上面的代码将会产生如下显示：<br><img src="/images/sample-css.png" alt=""><br>样式生效了，是不是很简单！</p>
+<h2 id="CSS书写位置"><a href="#CSS书写位置" class="headerlink" title="CSS书写位置"></a>CSS书写位置</h2><p>在上面我们用了一个简单的例子来达到修改样式的目的，当然css书写位置有几种：</p>
+<ol>
+<li><p><strong>内嵌样式</strong>：在一个标签内部的<code>style属性</code>中包含CSS的声明。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"border:1px solid black;"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>内部样式</strong>：在html文档的<code>head标签</code>包含一个<code>style标签</code>,里面进行CSS的书写。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS sample experiment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">h1</span>&#123;</div><div class="line">            <span class="attribute">border</span>:<span class="number">1px</span> solid black;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>外部样式</strong>：如上面的例子一样，将CSS写入进一个带有<code>.css</code>扩展名的单独文件中，然后通过<code>link标签</code>引入它。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面的书写位置推荐大家使用<strong>外部样式</strong>，这样可以达到html和css分离的效果。<br>尽量不要使用<strong>内嵌样式</strong>，这对于维护很糟糕（您可能需要每个文档多次更新相同的信息），而且会把html和css的信息进行混合，使CSS的代码难以阅读和理解。</p>
+<h2 id="CSS语法规则"><a href="#CSS语法规则" class="headerlink" title="CSS语法规则"></a>CSS语法规则</h2><p>css最基本的概念就分为<strong>属性</strong>和<strong>值</strong>，属性和值一起配对叫做<em>css声明</em> ,一个花括号里面可能会有很多css声明，他们和<strong>选择器</strong>一起组成了css的规则。<br><img src="/images/css.png" alt="">   </p>
+<h2 id="CSS的注释"><a href="#CSS的注释" class="headerlink" title="CSS的注释"></a>CSS的注释</h2><p>css的注释是以<code>/*</code>开头，以<code>*/</code>结束，中间的任何字符都不会被解析,例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">20px</span>; <span class="comment">/* 给body元素添加字体大小为20像素 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><p>上面的例子我们全部使用的是标签选择器来举例，下面我们介绍一些常用的选择器：</p>
+<ul>
+<li><strong>基础</strong>选择器，又叫简单选择器，可以根据元素类型匹配一个或多个元素。有标签、id、class等。</li>
+<li><strong>伪类</strong>选择器，匹配元素在某个状态时存在的一个或多个元素。如鼠标悬浮、获得焦点等。</li>
+<li><strong>伪元素</strong>选择器，匹配与元素相关的特定位置内容的一个或多个部分。如元素之前或之后生成的内容。</li>
+<li><strong>属性</strong>选择器，根据元素的<code>属性/属性值</code>匹配一个或多个元素。</li>
+<li><strong>关系</strong>选择器，这些不是完全的选择器，只是将上述选择器一个或多个组合在一起使用，如父子选择器，后代选择器等。</li>
+</ul>
+<h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h4><p>标签选择器也叫<strong>元素选择器</strong>，这是对于HTML元素最简单的一种选择器，直接写标签名加上CSS声明就行了：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">font-weight</span>:bold; <span class="comment">/* 给所有的p标签 字体加粗 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><p>id选择器由一个<code>#</code>号后面跟上id属性的值组成，任何元素都可以设置<strong>唯一</strong>的id属性，这是最有效的选择单个元素的办法。例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"hello"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"hi"</span>&gt;</span>Hi,Good morning!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#hello</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">'微软雅黑'</span>; <span class="comment">/* 设置字体集为 微软雅黑*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-id">#hi</span>&#123;</div><div class="line">    <span class="attribute">text-algin</span>:center; <span class="comment">/* 设置该元素内的文本 水平位置居中  */</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>重要提示</strong>，html文档中的id值必须是唯一的，重复的id值会导致浏览器的未知行为。</p>
+</blockquote>
+<h4 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h4><p>class选择器又叫类选择器，它是由一个点<code>.</code>和类名组成，值得注意的是，不同的元素可以有相同的class，同一个元素也可以有多个class的值，以空格分开：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"first item"</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"second item"</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"third"</span>&gt;</span>JAVASCRIPT<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>item<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="selector-class">.first</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>:<span class="string">'黑体'</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">24px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span>&#123;</div><div class="line">    <span class="attribute">text-decoration</span>: none; <span class="comment">/* 去除下划线 */</span></div><div class="line">    <span class="attribute">color</span>:green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样将会造成如下输出：<br><img src="/images/class.png" alt="">    </p>
+<h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><p>在很多语言都有通配符，也就是这个符号<code>*</code>，在CSS里面它代表匹配所有的标签或元素。由于很少有样式作用于页面的所有元素，所以它常常和其他选择器组合使用。</p>
+<blockquote>
+<p><strong>提示</strong>，使用通配符选择器要小心，因为他匹配所有的元素，在大型页面中它可能会对性能造成明显的影响，导致网页速度比预期慢，所以，尽量少用。</p>
+</blockquote>
+<h3 id="关系选择器"><a href="#关系选择器" class="headerlink" title="关系选择器"></a>关系选择器</h3><p>关系选择器，又叫<strong>组合</strong>选择器，下面我们介绍常用的三种关系：</p>
+<ul>
+<li>子选择器，使用<code>&gt;</code>符号，匹配该元素的直接子元素。</li>
+<li>后代选择器，使用空格符号，匹配该元素的所有后代元素。（包含直接后代，孙子等。）</li>
+<li>分组选择器，使用<code>,</code>符号，表示前一个和后一个选择器都适用于该css规则。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">span</span>&#123;</div><div class="line">   <span class="attribute">color</span>:red; <span class="comment">/* 设置div下的直接子元素：span标签里面的文本颜色为红色 */</span> </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span> <span class="selector-tag">span</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">24px</span>;  <span class="comment">/* 设置div下的所有span标签里面的字体大小为24像素 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span>,<span class="selector-tag">a</span>&#123;</div><div class="line">    <span class="attribute">font-weight</span>:bold;  <span class="comment">/* 设置字体加粗，适用于span标签和a标签 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>伪类选择器是在选择器后面加上冒号<code>:</code>，指定<em>当它处于特定状态时</em>才对所选元素进行样式化，下面介绍两种常用的伪类选择器：</p>
+<ul>
+<li><code>:hover</code>，鼠标悬浮触发。</li>
+<li><code>:focus</code>，鼠标焦点触发。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">30px</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 当鼠标悬浮到h1元素上时，字体颜色变成白色，背景色变成黑色 */</span></div><div class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">color</span>:white;</div><div class="line">    <span class="attribute">background-color</span>:black;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 当在input元素上获得鼠标焦点时 触发 */</span></div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span>&#123;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">3px</span> black; <span class="comment">/* 添加一些阴影 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这节课我们学习了css的语法规则，以及它的常用选择器。下节课程我们会继续学习css的常见属性以及一些小技巧！</p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>①. 测试CSS的书写位置。</p>
+<p>②. 测试这节课学习的所有选择器。    </p>
+<p>③. 使用html标签和今天学习的css内容制作一份简历,要求使用外部样式。  </p>
+<blockquote>
+<p><em>教材编写</em> <em>myxxqy@gmail.com</em> <em>张超</em><br>                                <em>2017.07.04</em></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/06/三、表格和表单/" rel="next" title="三、表格和表单">
+                <i class="fa fa-chevron-left"></i> 三、表格和表单
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/06/五、CSS常用属性之浮动/" rel="prev" title="五、CSS常用属性之浮动">
+                五、CSS常用属性之浮动 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="张超" />
+          <p class="site-author-name" itemprop="name">张超</p>
+           
+              <p class="site-description motion-element" itemprop="description">没有人能挡住你的脚步，除了你自己。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用CSS"><span class="nav-number">1.</span> <span class="nav-text">开始使用CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS简介"><span class="nav-number">1.1.</span> <span class="nav-text">CSS简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS格式"><span class="nav-number">1.2.</span> <span class="nav-text">CSS格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速示例"><span class="nav-number">1.3.</span> <span class="nav-text">快速示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS书写位置"><span class="nav-number">1.4.</span> <span class="nav-text">CSS书写位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS语法规则"><span class="nav-number">1.5.</span> <span class="nav-text">CSS语法规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS的注释"><span class="nav-number">1.6.</span> <span class="nav-text">CSS的注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS选择器"><span class="nav-number">1.7.</span> <span class="nav-text">CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础选择器"><span class="nav-number">1.7.1.</span> <span class="nav-text">基础选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签选择器"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">标签选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id选择器"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">id选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#class选择器"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">class选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通配符选择器"><span class="nav-number">1.7.1.4.</span> <span class="nav-text">通配符选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系选择器"><span class="nav-number">1.7.2.</span> <span class="nav-text">关系选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪类选择器"><span class="nav-number">1.7.3.</span> <span class="nav-text">伪类选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.8.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业"><span class="nav-number">1.9.</span> <span class="nav-text">作业</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张超</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("wvnqLLrh1w4gSYFhQpYFm2hj-gzGzoHsz", "b6Q5KfzsGSy3jAH0hWGvWaxp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

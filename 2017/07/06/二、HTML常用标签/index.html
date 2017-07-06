@@ -1,0 +1,847 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML、CSS基础课程系列 HTML
+HTML常用标签标题和段落很多的结构化文本都是由标题(Headings)和段落(Paragraphs)组成，包括学习教材、报纸、新闻阅读类的APP。在HTML中，每个段落都必须包含在一个&amp;lt;p&amp;gt;元素中，如下所示：1&amp;lt;p&amp;gt;我是一个段落！&amp;lt;/p&amp;gt;
+每个标题都必须包含在标题元素中：1&amp;lt;h1&amp;gt;我是一个主标题!&amp;lt;/h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二、HTML常用标签">
+<meta property="og:url" content="http://myxxqy.com/2017/07/06/二、HTML常用标签/index.html">
+<meta property="og:site_name" content="小小青喻's 博客">
+<meta property="og:description" content="HTML、CSS基础课程系列 HTML
+HTML常用标签标题和段落很多的结构化文本都是由标题(Headings)和段落(Paragraphs)组成，包括学习教材、报纸、新闻阅读类的APP。在HTML中，每个段落都必须包含在一个&amp;lt;p&amp;gt;元素中，如下所示：1&amp;lt;p&amp;gt;我是一个段落！&amp;lt;/p&amp;gt;
+每个标题都必须包含在标题元素中：1&amp;lt;h1&amp;gt;我是一个主标题!&amp;lt;/h">
+<meta property="og:image" content="http://myxxqy.com/images/panda.jpg">
+<meta property="og:updated_time" content="2017-07-06T09:58:16.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二、HTML常用标签">
+<meta name="twitter:description" content="HTML、CSS基础课程系列 HTML
+HTML常用标签标题和段落很多的结构化文本都是由标题(Headings)和段落(Paragraphs)组成，包括学习教材、报纸、新闻阅读类的APP。在HTML中，每个段落都必须包含在一个&amp;lt;p&amp;gt;元素中，如下所示：1&amp;lt;p&amp;gt;我是一个段落！&amp;lt;/p&amp;gt;
+每个标题都必须包含在标题元素中：1&amp;lt;h1&amp;gt;我是一个主标题!&amp;lt;/h">
+<meta name="twitter:image" content="http://myxxqy.com/images/panda.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://myxxqy.com/2017/07/06/二、HTML常用标签/"/>
+
+
+
+
+
+  <title> 二、HTML常用标签 | 小小青喻's 博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c6160ab5d13757b482743314a4624b03";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小小青喻's 博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">沉静，沉淀，缓步向前！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/06/二、HTML常用标签/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                二、HTML常用标签
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T17:52:12+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/06/二、HTML常用标签/" class="leancloud_visitors" data-flag-title="二、HTML常用标签">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>HTML、CSS基础课程系列</code> <code>HTML</code></p>
+<h1 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h1><h2 id="标题和段落"><a href="#标题和段落" class="headerlink" title="标题和段落"></a>标题和段落</h2><p>很多的结构化文本都是由标题(<em>Headings</em>)和段落(<em>Paragraphs</em>)组成，包括学习教材、报纸、新闻阅读类的APP。<br>在HTML中，每个段落都必须包含在一个<code>&lt;p&gt;</code>元素中，如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我是一个段落！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>每个标题都必须包含在标题元素中：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是一个主标题!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>标题元素有六个，分别为<code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、<code>&lt;h4&gt;</code>、<code>&lt;h5&gt;</code>、<code>&lt;h6&gt;</code>，每个标题代表的含义也不相同，h1代表主标题，h2代表副标题，h3代表副标题，按照重要性依次类推。</p>
+<blockquote>
+<p>注意：标题很重要，请确保html heading 标签只用于标题，而不是仅仅为了产生加粗或大号的文本使用标题！  </p>
+</blockquote>
+<h3 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h3><p>语义依赖于我们周围的任何地方，我们依靠经验来判断日常对象的功能是什么：当我们看到某些东西时，我们就知道它的功能是什么。举个例子，比如您看到一份<strong>涂抹了黄油的面包</strong>，马上就会联想到吃、早餐、流口水等现象。<br>类似的，我们需要确保我们使用的是正确的元素，给我们内容正确的意义，功能或外观。那么，<code>&lt;h1&gt;</code>标签也是一个语义元素，它包含<strong>页面顶级标题</strong>的含义：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是本页面顶级标题！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>通常情况，h1标签会有一个较大的字体，使其看起来像一个标题，更重要的是，语义的价值会体现在更多地方，例如搜索引擎等等。<br>但是，后面课程如果大家学习了<code>css</code>,那么也可以使任何元素看起来像一个标题：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"font-size: 32px; margin: 21px 0;"</span>&gt;</span>我也是一个顶级标题吗？<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这是一个<code>&lt;span&gt;</code>标签，它没有语义。仅仅是当你想使用<code>css</code>或<code>javascript</code>时，它可以用来包装内容，而不给予任何的含义。<br>由于它没有任何含义，也不会得到上述说的语义化的任何好处。（大家会在后续的课程中学习到相关<code>css</code>的内容）</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表(<em>Lists</em>)，也是无处不在。论文的目录、领导讲话的要点、医生开具的药物清单等等，列表主要有如下两种：</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<code>&lt;ul&gt;</code>用于标记项目顺序无关的项目列表，以药物清单为例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小儿氨酚黄那敏颗粒<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小儿止咳糖浆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>双黄连口服液<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>小儿清肺口服液<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>每个无序列表都是从<code>&lt;ul&gt;</code>开始，这包含所有的列表项<code>&lt;li&gt;</code>，所有的内容都在<code>&lt;li&gt;</code>(<em>list item</em>)元素中。</p>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>无序列表<code>&lt;ol&gt;</code>用于标记项目是<em>有序的</em>，以日程表为例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>去菜市场买菜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>接女儿放学<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>准备晚饭<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>和老婆躺床上看电视<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>结构和无序列表相同，但是列表是包含在<code>&lt;ol&gt;</code>中，而不是<code>&lt;ul&gt;</code>里面。</p>
+<h2 id="重要性"><a href="#重要性" class="headerlink" title="重要性"></a>重要性</h2><p>在人类的语言中，不管是中文还是英文，都有很多强调某些词语来改变句子的含义。在html中，提供了很多这种语义化元素，这里我们介绍集中常见的元素。<br>下面我们来看一个经典的例子：</p>
+<blockquote>
+<p>（1）<strong>我</strong>没说他偷了你的iphone——可是有人这么说的。<br>（2）我<strong>没</strong>说他偷了你的iphone——我确实没有这么说。<br>（3）我没<strong>说</strong>他偷了你的iphone——可是我是这么暗示的。<br>（4）我没说<strong>他</strong>偷了你的iphone——可是有人偷了。<br>（5）我没说他<strong>偷了</strong>你的iphone——可能是他借去了。<br>（6）我没说他偷了<strong>你的</strong>iphone——他偷了别人的iphone。<br>（7）我没说他偷了你的<strong>iphone</strong>——他偷了别的东西。    </p>
+</blockquote>
+<p>同样一句话，语气重读不同，意思就大为不同。这里强调重要的话语，我们使用<code>&lt;strong&gt;</code>(<em>strong important</em>)元素来标记这些实例，浏览器默认将其作为粗体文本。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我<span class="tag">&lt;<span class="name">strong</span>&gt;</span>很<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>喜欢你！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>你不要令我<span class="tag">&lt;<span class="name">strong</span>&gt;</span>失望<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="换行和分割线"><a href="#换行和分割线" class="headerlink" title="换行和分割线"></a>换行和分割线</h2><h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>在前面的课程里，相信大家已经发现了，在html里面直接按回车键(<code>Enter</code>)换行，而显示在浏览器上面是没有效果的。那么，如何在浏览器上面换行呢。<br>这里就需要用到<code>&lt;br&gt;</code>标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>我是上面一行的<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>我是下面一行的<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>像<code>&lt;br&gt;</code>这种，只有开始标签，没有内容和结束标签的元素叫做<strong>空元素</strong>，也叫自闭合标签。</p>
+<blockquote>
+<p>注意，使用空的<code>&lt;p&gt;&lt;/p&gt;</code>段落标签来换行是个坏习惯，用<code>&lt;br&gt;</code>标签去代替它。   </p>
+</blockquote>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>同样是空元素的<code>&lt;hr&gt;</code>是分割线标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>一些普通内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>另外一些普通内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>html有个特殊的标签，叫做注释标签<code>&lt;!-- --&gt;</code>，凡是在注释标签里面的内容都会被浏览器忽视掉。比如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 我是html注释内容 我不会在浏览器中显示 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我是正常的文本内容 我会在浏览器上正常显示<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>上面的代码可以看出，第一行不会在浏览器中展示，第二行将在浏览器中正常显示。<br>注释的作用就是，可以对您的代码进行解释，这样做的好处是帮助记忆理解您或者同事的代码，当你在大型项目中时尤其有用。</p>
+<h2 id="超链接和图片"><a href="#超链接和图片" class="headerlink" title="超链接和图片"></a>超链接和图片</h2><h3 id="什么是超链接"><a href="#什么是超链接" class="headerlink" title="什么是超链接"></a>什么是超链接</h3><p>超链接非常重要，它使WEB称为了网络，超链接是网络提供的最令人激动的创新之一，<br>它允许我们将文档链接到我们想要的任何文档(或其他资源)，也可以通过链接，访问到浏览器的另一个网址(<em>URL</em>)。</p>
+<h3 id="如何使用超链接"><a href="#如何使用超链接" class="headerlink" title="如何使用超链接"></a>如何使用超链接</h3><p><code>&lt;a&gt;</code>标签就是超链接，当然它和其他元素不同的是，它有一个<strong>必须的</strong>属性<code>href</code>，这个属性链接跳转指向的地址。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我想去<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com"</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span>搜索一些东西。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>它给我们一个结果：</p>
+<blockquote>
+<p>一个指向百度页面的网址 <a href="https://www.baidu.com" target="_blank" rel="external">百度</a></p>
+</blockquote>
+<h3 id="URL和路径的快速入门"><a href="#URL和路径的快速入门" class="headerlink" title="URL和路径的快速入门"></a>URL和路径的快速入门</h3><p>我们已经发现，<code>&lt;a&gt;</code>标签的<code>href</code>属性会链接一个地址，那么这个地址是怎么分类的呢：</p>
+<h4 id="绝对路径地址"><a href="#绝对路径地址" class="headerlink" title="绝对路径地址"></a>绝对路径地址</h4><p>绝对路径地址，是指完整的描述路径的地址，一般指向由其在网络上的绝对位置定义的位置，包括协议和域名，以<code>http</code>或<code>https</code>开头的地址。<br>在本地的windows操作系统下，以<code>C:/</code>或<code>D:/</code>开头的地址也是绝对地址。又或者，在linux或类linux操作系统下，以<code>/</code>开头的都是绝对地址。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- windows操作系统下 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"D:/lesson/new/HTML&amp;CSS/lesson1/HTML常用标签.html"</span>&gt;</span>本文件位置<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- linux操作系统下--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/var/www/html/index.html"</span>&gt;</span>web服务器主页地址<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="相对路径地址"><a href="#相对路径地址" class="headerlink" title="相对路径地址"></a>相对路径地址</h4><p>相对路径地址就跟操作系统的目录息息相关了，主要分为下面几种情况：   </p>
+<ul>
+<li><p><strong>同级目录</strong>：当前目录或文件夹下有着另外一个web文件<code>index2.html</code>,访问它的方式是<code>直接写上文件名称</code> 或 <code>./文件名称</code>,这里的<code>./</code>代表当前目录。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./index2.html"</span>&gt;</span>访问index2.html页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>上级目录</strong>：如果<code>index2.html</code>这个文件在当前文件的上一级目录，访问方式是<code>../文件名称</code>。如果是上级的上级，就使用<code>../../</code>，同理可推多个上级。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"../index2.html"</span>&gt;</span>访问上级目录的index2.html页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>下级目录</strong>：如果<code>index2.html</code>这个文件在当前目录的<code>pages</code>这个目录下，那么访问方式是<code>./pages/index2.html</code>，这里加上目录名称即可。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./pages/index2.html"</span>&gt;</span>访问pages目录下的index2.html页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><blockquote>
+<p>最早，网络知识文字，这很无聊，幸运的是，页面可以使用图像了。</p>
+</blockquote>
+<p>在网页上放置图像，我们使用<code>&lt;img&gt;</code>这个元素，这也是一个空元素(意味着没有内容和结束标签)，<br>但是它同<code>&lt;a&gt;</code>标签很类似，都有一个<strong>必须的</strong>属性<code>src</code>(<em>source</em> 资源)，<code>src</code>属性包含一个指向图像资源地址的路径。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/panda.jpg"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>那么它显示出来的样子，一只睡觉的熊猫：<br><img src="/images/panda.jpg" alt=""><br>同样的，凡是看到有路径地址的地方，都有绝对路径和相对路径之分，和<code>&lt;a&gt;</code>标签的<code>href</code>属性具有相同的地方。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这节课程应该给你一个很好的了解如何开始标记HTML中的文本，并介绍了这方面的一些最重要的元素。<br>在这一领域有很多的语义元素，我们将在后面的课程中看到更多的语义元素。</p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>①. 利用这节课所学知识，使用html文档写一份求职信，要求标题、段落分明，结合图片，突出自己优势重点。   </p>
+<blockquote>
+<p><em>教材编写</em> <em>myxxqy@gmail.com</em> <em>张超</em><br>                                <em>2017.06.28</em></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/06/一、初识HTML/" rel="next" title="一、初识HTML">
+                <i class="fa fa-chevron-left"></i> 一、初识HTML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/06/三、表格和表单/" rel="prev" title="三、表格和表单">
+                三、表格和表单 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="张超" />
+          <p class="site-author-name" itemprop="name">张超</p>
+           
+              <p class="site-description motion-element" itemprop="description">没有人能挡住你的脚步，除了你自己。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML常用标签"><span class="nav-number">1.</span> <span class="nav-text">HTML常用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题和段落"><span class="nav-number">1.1.</span> <span class="nav-text">标题和段落</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语义化"><span class="nav-number">1.1.1.</span> <span class="nav-text">语义化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">1.2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">1.2.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">1.2.2.</span> <span class="nav-text">有序列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要性"><span class="nav-number">1.3.</span> <span class="nav-text">重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换行和分割线"><span class="nav-number">1.4.</span> <span class="nav-text">换行和分割线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#换行"><span class="nav-number">1.4.1.</span> <span class="nav-text">换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分割线"><span class="nav-number">1.4.2.</span> <span class="nav-text">分割线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.5.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超链接和图片"><span class="nav-number">1.6.</span> <span class="nav-text">超链接和图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是超链接"><span class="nav-number">1.6.1.</span> <span class="nav-text">什么是超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用超链接"><span class="nav-number">1.6.2.</span> <span class="nav-text">如何使用超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL和路径的快速入门"><span class="nav-number">1.6.3.</span> <span class="nav-text">URL和路径的快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对路径地址"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">绝对路径地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相对路径地址"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">相对路径地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像"><span class="nav-number">1.6.4.</span> <span class="nav-text">图像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.7.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业"><span class="nav-number">1.8.</span> <span class="nav-text">作业</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张超</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("wvnqLLrh1w4gSYFhQpYFm2hj-gzGzoHsz", "b6Q5KfzsGSy3jAH0hWGvWaxp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
