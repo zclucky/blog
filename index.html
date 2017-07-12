@@ -270,6 +270,190 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/12/windows10下Apache安装及配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/12/windows10下Apache安装及配置/" itemprop="url">
+                  windows10下Apache安装及配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T16:30:40+08:00">
+                2017-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP课程系列/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP课程系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/12/windows10下Apache安装及配置/" class="leancloud_visitors" data-flag-title="windows10下Apache安装及配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>环境配置</code> <code>apache</code></p>
+<h1 id="window10下Apache安装及配置"><a href="#window10下Apache安装及配置" class="headerlink" title="window10下Apache安装及配置"></a>window10下Apache安装及配置</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先去官方网站：<a href="http://httpd.apache.org/download.cgi" target="_blank" rel="external">http://httpd.apache.org/download.cgi</a>去下载最新版本的<code>Apache HTTP Server 2.4.27</code>   </p>
+<p><img src="/apache1.png" alt="">   </p>
+<p>找到<code>Files for Microsoft Windows</code>这里，打开它，</p>
+<p><img src="/apache2.png" alt="">   </p>
+<p>这里有5个标签，除开前两个，后面几个都是集成环境，这里我们选择第一个<code>ApacheHaus</code>，在新的界面中，会发现有VC14和VC11及VC9字样，通过阅读相关内容得知，VC9是指用VS2008编译的代码，而VC11是用VS2012编译的，而用VS2012编译的无法在windows xp和server 2003中使用，这里我们选择V11编译的的64位Apache（如果还在用xp的同学，就自己选择VC9把）。  </p>
+<p><img src="/apache3.png" alt="">   </p>
+<p>下载完成是一个二进制压缩包，自此，下载完成。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>因为是压缩包，所以直接解压到合适的目录就行了，这里我直接解压到D盘。   </p>
+<p><img src="/apache4.png" alt="">   </p>
+<p>也就是说安装目录是<code>D:\Apache24</code>。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>安装Apache服务第一步，是添加环境变量，</p>
+<ol>
+<li>右键点击<strong>此电脑</strong>=&gt;<strong>属性</strong>=&gt;<strong>高级系统设置</strong>=&gt;<strong>环境变量</strong>=&gt;<strong>系统变量</strong>=&gt;<strong>path</strong></li>
+<li>如果你是windows10的话，点击<strong>新建</strong>，然后把<code>D:\Apache24\bin\</code>地址添加进去。如果是windows7的话，就直接在最后面加上英文小写的<code>;</code>，然后把路径添加进去即可。</li>
+<li>一路点击<code>确定</code>，完成环境变量的配置。</li>
+</ol>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>Apache的配置文件是安装目录<code>D:\Apache24\conf</code>里面的<code>httpd.conf</code>文件，打开它，找到<code>Define SRVROOT</code>这一项，把他改成我们自己的目录地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Define SRVROOT &quot;D:/Apache24&quot;</div><div class="line">ServerRoot &quot;$&#123;SRVROOT&#125;&quot;</div></pre></td></tr></table></figure>
+<p>然后保存文件，接下来就需要安装Apache的主服务，这里需要注意的是，在windows操作系统下面，需要提供管理员权限，也就是使用管理员打开<code>cmd</code>，在左下角搜索框里面输入<code>cmd</code>，然后在上面右键点击<code>命令提示符</code>，<strong>以管理员身份运行</strong></p>
+<p><img src="/mysql12.png" alt="">   </p>
+<p>接下来进入到命令行窗口，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">httpd -k install</div></pre></td></tr></table></figure>
+<p>该命令的意思是，安装apache服务，服务安装完毕后，会自动测试，若有问题，窗口会提示错误，此时，请根据错误自行排查，正常安装完毕如下。</p>
+<p><img src="/apache6.png" alt="">   </p>
+<p>此时，就可以在本地服务看到刚才安装的<code>Apache24</code>这个服务了   </p>
+<p><img src="/apache5.png" alt="">    </p>
+<p>此时你可以在这里右键点击启动、停止、重启等服务。当然也可以通过命令行去做这些操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//启动服务</div><div class="line">http -k start</div><div class="line"></div><div class="line">//停止服务</div><div class="line">httpd -k stop</div><div class="line"></div><div class="line">//重启服务</div><div class="line">httpd -k restart</div><div class="line"></div><div class="line">//卸载服务</div><div class="line">httpd -k uninstall</div><div class="line"></div><div class="line">//查看安装的apache的版本信息</div><div class="line">httpd -v</div><div class="line"></div><div class="line">//查看所有的命令列表</div><div class="line">httpd -h</div></pre></td></tr></table></figure>
+<p>可以自己试着在命令行操作一下：   </p>
+<p><img src="/apache7.png" alt="">    </p>
+<p><strong>注意</strong>：如果你安装过程有错误，上面已经说了，安装此服务需要VC11，所以需要提前安装这个，附上地址<a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=30679" target="_blank" rel="external">https://www.microsoft.com/zh-CN/download/details.aspx?id=30679</a></p>
+<p>启动服务后，打开浏览器，输入<code>localhost</code>,发现变成下图的样子，说明安装配置就大功告成。  </p>
+<p><img src="/apache8.png" alt="">    </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/12/windows10下MYSQL安装及配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1664,140 +1848,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/01/20/dataTables服务器模式-thinkphp5-0后端代码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小小青喻's 博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/20/dataTables服务器模式-thinkphp5-0后端代码/" itemprop="url">
-                  dataTables服务器模式(thinkphp5.0后端代码)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-20T11:10:18+08:00">
-                2017-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/01/20/dataTables服务器模式-thinkphp5-0后端代码/" class="leancloud_visitors" data-flag-title="dataTables服务器模式(thinkphp5.0后端代码)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>怎么使用<code>dataTables</code>我就不说了，按照<a href="https://datatables.net/">官网</a>教程去引入必须的css文件和js文件就行了，<br>这里主要谈下他的服务器处理<a href="https://datatables.net/examples/server_side/">Server-side</a><br>下面是HTML页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;table id=&quot;myTable&quot; class=&quot;display&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;</div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/20/dataTables服务器模式-thinkphp5-0后端代码/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1847,7 +1897,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1865,7 +1915,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
