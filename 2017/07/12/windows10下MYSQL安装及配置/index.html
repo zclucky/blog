@@ -1,0 +1,906 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MYSQL,环境配置," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="环境配置 mysql
+window10下MYSQL安装及配置下载首先，去mysql官方网站：https://dev.mysql.com/downloads/installer/下载windows安装包，如下图：
+   
+点击下载，mysql官网会让你先注册会员，登录后下载，当然也可以选择No thanks, just start my download.
+安装因为我们下载的是安装包，是后缀为.ms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows10下MYSQL安装及配置">
+<meta property="og:url" content="http://myxxqy.com/2017/07/12/windows10下MYSQL安装及配置/index.html">
+<meta property="og:site_name" content="小小青喻's 博客">
+<meta property="og:description" content="环境配置 mysql
+window10下MYSQL安装及配置下载首先，去mysql官方网站：https://dev.mysql.com/downloads/installer/下载windows安装包，如下图：
+   
+点击下载，mysql官网会让你先注册会员，登录后下载，当然也可以选择No thanks, just start my download.
+安装因为我们下载的是安装包，是后缀为.ms">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql2.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql3.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql4.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql5.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql6.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql7.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql8.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql12.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql13.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql11.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql10.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql14.png">
+<meta property="og:image" content="http://myxxqy.com/../images/mysql15.png">
+<meta property="og:updated_time" content="2017-07-12T01:09:21.723Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="windows10下MYSQL安装及配置">
+<meta name="twitter:description" content="环境配置 mysql
+window10下MYSQL安装及配置下载首先，去mysql官方网站：https://dev.mysql.com/downloads/installer/下载windows安装包，如下图：
+   
+点击下载，mysql官网会让你先注册会员，登录后下载，当然也可以选择No thanks, just start my download.
+安装因为我们下载的是安装包，是后缀为.ms">
+<meta name="twitter:image" content="http://myxxqy.com/../images/mysql.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://myxxqy.com/2017/07/12/windows10下MYSQL安装及配置/"/>
+
+
+
+
+
+  <title> windows10下MYSQL安装及配置 | 小小青喻's 博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c6160ab5d13757b482743314a4624b03";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小小青喻's 博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">沉静，沉淀，缓步向前！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://myxxqy.com/2017/07/12/windows10下MYSQL安装及配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小青喻's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                windows10下MYSQL安装及配置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T09:06:51+08:00">
+                2017-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP课程系列/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP课程系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/12/windows10下MYSQL安装及配置/" class="leancloud_visitors" data-flag-title="windows10下MYSQL安装及配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>环境配置</code> <code>mysql</code></p>
+<h1 id="window10下MYSQL安装及配置"><a href="#window10下MYSQL安装及配置" class="headerlink" title="window10下MYSQL安装及配置"></a>window10下MYSQL安装及配置</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先，去mysql官方网站：<a href="https://dev.mysql.com/downloads/installer/" target="_blank" rel="external">https://dev.mysql.com/downloads/installer/</a>下载windows安装包，如下图：</p>
+<p><img src="../images/mysql.png" alt="">   </p>
+<p>点击下载，mysql官网会让你先注册会员，登录后下载，当然也可以选择<code>No thanks, just start my download.</code></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>因为我们下载的是安装包，是后缀为<code>.msi</code>格式的文件，所以直接双击即可。   </p>
+<p><img src="../images/mysql2.png" alt="">   </p>
+<p>选择安装类型，我们选第二个<code>Server only</code>，也就是只安装服务，然后点击下一步，   </p>
+<p><img src="../images/mysql3.png" alt="">   </p>
+<p>这是选择或自定义安装路径，其中<code>Install Directory</code>是安装路径，<code>Data Directory</code>是存放数据的路径。</p>
+<blockquote>
+<p>注意，mysql5.7以后，配置文件<code>my.ini</code>默认在存放数据的路径，和<code>data</code>文件夹在同一个目录。 </p>
+</blockquote>
+<p>如果没有需要修改的，直接就点下一步，   </p>
+<p><img src="../images/mysql4.png" alt="">   </p>
+<p>这里是安装页面，直接点击<code>Execte</code>执行即可，安装完毕点击下一步，下面是配置一些用户信息之类的：   </p>
+<p><img src="../images/mysql5.png" alt="">    </p>
+<p>这里选择第一个，点击下一步，然后选择服务器类型和服务默认端口3306，不用修改，直接下一步，  </p>
+<p><img src="../images/mysql6.png" alt="">   </p>
+<p>上面是填写<code>root</code>用户登录密码，长度至少为4位，下面是让你添加其他用户，这里暂时不添加，写完密码后继续下一步，   </p>
+<p><img src="../images/mysql7.png" alt="">   </p>
+<p>这里配置windows服务信息，给mysql服务取个名字，我们也不需要更改，就叫<code>MYSQL57</code>，其他的也不用管，默认就行，下一步是安装插件和扩展，先不用管直接下一步，   </p>
+<p><img src="../images/mysql8.png" alt="">    </p>
+<p>到了这里就是最后一步了，直接执行<code>Execte</code>，安装完毕，点击<code>Finish</code>。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="mysql服务常用命令"><a href="#mysql服务常用命令" class="headerlink" title="mysql服务常用命令"></a>mysql服务常用命令</h3><p>我们在使用mysql服务的时候会用到一些命令，比如启动服务，停止服务啊等。</p>
+<ul>
+<li><code>net start mysql57</code>，启动mysql服务，后面的<code>mysql57</code>是上面我们安装步骤里面的服务名。</li>
+<li><code>net stop mysql57</code>，停止mysql服务。</li>
+</ul>
+<p>这里需要注意的是，在windows操作系统下面，需要提供管理员权限才能输入上面的命令，也就是使用管理员打开<code>cmd</code>，在左下角搜索框里面输入<code>cmd</code>，然后在上面右键点击<code>命令提示符</code>，<strong>以管理员身份运行</strong></p>
+<p><img src="../images/mysql12.png" alt="">   </p>
+<p>就可以在打开的命令行里面输入上面的命令了：   </p>
+<p><img src="../images/mysql13.png" alt="">     </p>
+<p>也可以直接找到windows的<code>本地服务</code>，如下图：   </p>
+<p><img src="../images/mysql11.png" alt="">    </p>
+<p>通过这里也可以启动以及停止此服务。</p>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>安装完毕之后，如果你没改安装路径的话，默认安装路径应该是<code>C:\Program Files\MySQL\MySQL Server 5.7\</code>，如果我们要在命令行<code>cmd</code>里执行mysql的一些指令的话，就会用<code>C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe</code>这个程序，但是你没有必要每次都输入这么长一串字符，这里的话我们就需要用到环境变量。<br>我们把<code>C:\Program Files\MySQL\MySQL Server 5.7\bin\</code>这个目录添加到环境变量里面去，然后每次只需要输入<code>mysql</code>，系统会自动到的<code>C:\Program Files\MySQL\MySQL Server 5.7\bin\</code>目录去找到<code>mysql.exe</code>执行程序。<br>如果你是以前版本的mysql的话，手动设置：</p>
+<ol>
+<li>右键点击<strong>此电脑</strong>=&gt;<strong>属性</strong>=&gt;<strong>高级系统设置</strong>=&gt;<strong>环境变量</strong>=&gt;<strong>系统变量</strong>=&gt;<strong>path</strong></li>
+<li>如果你是windows10的话，点击<strong>新建</strong>，然后把<code>C:\Program Files\MySQL\MySQL Server 5.7\bin\</code>地址添加进去。如果是windows7的话，就直接在后面加上英文小写的<code>;</code>，后面把路径添加进去即可。</li>
+<li>一路点击<code>确定</code>，完成环境变量的配置。</li>
+</ol>
+<p>这样通过打开windows下的命令行<code>cmd</code>，就可以看到mysql输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p1234</div></pre></td></tr></table></figure></p>
+<p>如果看到下面这个画面，证明你mysql安装成功了   </p>
+<p><img src="../images/mysql10.png" alt="">   </p>
+<h3 id="修改编码"><a href="#修改编码" class="headerlink" title="修改编码"></a>修改编码</h3><p>因为我们都是使用的操作系统是中文简体操作系统，所以数据库里面客户端编码是<code>gbk</code>，   </p>
+<p><img src="../images/mysql14.png" alt="">    </p>
+<p>这会导致后面很多中文字体出现乱码的情况，为了使我们后面的学习没有后顾之忧，必须修改所有编码为通用编码<code>utf8</code>，这就需要修改mysql的配置文件<code>my.ini</code>，首先找到上面的数据安装目录<code>C:\ProgramData\MySQL\MySQL Server 5.7</code>，找到里面的<code>my.ini</code>文件，复制一份到桌面上来。然后通过<code>sublime text</code>等编辑工具打开它，只需要修改下面三点：</p>
+<ul>
+<li><strong>[client]</strong>，找到这个下面，添加<code>default-character-set=utf8</code>。</li>
+<li><strong>[mysql]</strong>，找到这个下面，添加<code>default-character-set=utf8</code>。</li>
+<li><strong>[mysqld]</strong>，找到这个下面，添加<code>character-set-server=utf8</code>。</li>
+</ul>
+<p>然后把修改后的<code>my.ini</code>文件粘贴到mysql的安装目录<code>C:\Program Files\MySQL\MySQL Server 5.7\</code>去，最后，重启mysql服务再进去就OK了。   </p>
+<p><img src="../images/mysql15.png" alt="">    </p>
+<p>自此，windows10下面安装和配置mysql就全部完毕，谢谢。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MYSQL/" rel="tag"># MYSQL</a>
+          
+            <a href="/tags/环境配置/" rel="tag"># 环境配置</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/06/五、CSS常用属性之浮动/" rel="next" title="五、CSS常用属性之浮动">
+                <i class="fa fa-chevron-left"></i> 五、CSS常用属性之浮动
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="张超" />
+          <p class="site-author-name" itemprop="name">张超</p>
+           
+              <p class="site-description motion-element" itemprop="description">没有人能挡住你的脚步，除了你自己。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#window10下MYSQL安装及配置"><span class="nav-number">1.</span> <span class="nav-text">window10下MYSQL安装及配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">1.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql服务常用命令"><span class="nav-number">1.3.1.</span> <span class="nav-text">mysql服务常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量"><span class="nav-number">1.3.2.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改编码"><span class="nav-number">1.3.3.</span> <span class="nav-text">修改编码</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张超</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("wvnqLLrh1w4gSYFhQpYFm2hj-gzGzoHsz", "b6Q5KfzsGSy3jAH0hWGvWaxp");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
