@@ -379,8 +379,7 @@
 
       
         
-          
-            <p><code>HTML、CSS基础课程系列</code> <code>CSS</code></p>
+          <p><code>HTML、CSS基础课程系列</code> <code>CSS</code></p>
 <h1 id="CSS布局之定位"><a href="#CSS布局之定位" class="headerlink" title="CSS布局之定位"></a>CSS布局之定位</h1><blockquote>
 <p>定位(<em>position</em>)，允许你从正常的文档流取出其中的元素，使他们具有不同的行为。</p>
 </blockquote>
@@ -391,41 +390,13 @@
 <li>边距折叠(<em>margin collapsing</em>)：两个相邻的块级元素之间如果都设置了margin，那么较大的那个保留。</li>
 </ul>
 <p>而定位，就是允许我们覆盖上面文档流的行为，来产生其他有趣的效果。</p>
-<h2 id="静态定位"><a href="#静态定位" class="headerlink" title="静态定位"></a>静态定位</h2><p>静态定位(<strong>static</strong>)是元素的默认值，也就是把元素放入在文档流中的正常位置。（= _ =!也就是说和我们不写定位一样。）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">position</span>: <span class="selector-tag">static</span>;</div></pre></td></tr></table></figure></p>
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><p>绝对定位(<strong>absolute</strong>)，不为元素预留空间，通过指定元素相对于最近的非 static 的 定位祖先元素的偏移，如果没有非 static 的 定位祖先元素，那么回溯到body，来确定元素位置。绝对定位的元素可以设置外边距（margins），且不会与其他边距合并。</p>
-<blockquote>
-<p>注意，偏移属性一般和定位配合使用，它们有left、top、right、bottom。</p>
-</blockquote>
-<p>来看个例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span>我是盒子1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span>我是绝对定位的盒子2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span>我是盒子3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box1</span>&#123;</div><div class="line">    <span class="attribute">background-color</span>: yellow;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span>&#123;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box3</span>&#123;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>现在是文档流布局格式，在浏览器中是这样：（图1）   </p>
-<p><img src="/images/position1.png" alt="">   </p>
-<p>现在我们给盒子2添加绝对定位属性，并且给他加上偏移属性</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box2</span>&#123;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">left</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">top</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>现在在浏览器中是这个样子：   （图2）</p>
-<p><img src="/images/position3.png" alt="">    </p>
-<p>现在来分析一下，首先盒子2脱离了文档流，并且不预留空间，那么盒子3遵循文档流就应该出现在盒子1下面。<br>然后看偏移位置，上面偏移200像素，左边偏移300像素，它参照的元素是哪个呢？可以很明显看出来它参照的是body元素，因为它没有非 static 的 定位祖先元素。大家可以下来自己试试，如果有非 static 的 定位祖先元素，那么参照的是谁呢？</p>
-<blockquote>
-<p>注意，margin仍然会影响定位元素，但是它不会发生margin折叠，自己动手试试。</p>
-</blockquote>
-<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><p>相对定位(<strong>relative</strong>)，以元素当前所在位置为参考，不改变页面布局的情况下调整元素位置（因此会在原来的位置留下空白）。还是使用上面的三个盒子的例子，未改变前的位置参照上面图1，添加以下属性：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box2</span>&#123;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">left</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">top</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>效果如下图：（图3）   </p>
-<p><img src="/images/position2.png" alt="">    </p>
-<p>你会发现，它不在参照body了，而是参照它原来的位置移动的。并且盒子3并没有移动上去，盒子2原来的位置还是留在那里。</p>
-<h3 id="堆叠属性z-index"><a href="#堆叠属性z-index" class="headerlink" title="堆叠属性z-index"></a>堆叠属性z-index</h3><p>有一件事情我们还没有考虑到，那就是当页面有很多定位元素，它们有些开始重叠了，那么是什么决定元素出现在其他元素之上呢，那就是<code>z-index</code>这个属性干的事情。<br>我们使用水平轴（x轴）和垂直轴（y轴）来讨论网页，原点（0,0）位于页面的左上角，自己想象一下和数学的坐标轴的区别。<br>其实网页也有一个（z轴），它就是一条从屏幕到你的脸（= _ =）之间的虚线，<code>z-index</code>正是决定定位元素在该轴上面的位置，默认情况所有的元素都是0。</p>
-<blockquote>
-<p>注意，z-index只接受无单位的数字，如果是负的，代表在水平面之下。</p>
-</blockquote>
-<h2 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h2><p>固定定位（<strong>fixed</strong>），它的工作方式与绝对定位完全相同，只有一个区别，固定定位的偏移位置是参考的浏览器窗口本身，而不是什么定位祖先元素，这意味着你可以创建一些固定的UI项目，例如门帘广告位，持久导航栏等等。提示：现在你可以看本课件的左下角了，你发现了什么？</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这节课我们学习了css定位的相关属性，再次温习了元素文档流的概念，以及那些css属性会导致脱离文档流，现在网页设计对你已经敞开大门了，发挥你的想象，创造更多的乐趣吧。</p>
-<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>①. 测试这节课学习的所有关于CSS定位的相关属性。</p>
-<p>②. 测试堆叠属性z-index的使用。   </p>
-<p>③. 完成京东商城页面的作业。</p>
-<blockquote>
-<p><em>教材编写</em> <em>myxxqy@gmail.com</em> <em>张超</em><br>                                <em>2017.08.02</em></p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/02/八、CSS布局之定位/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
