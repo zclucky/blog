@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://myxxqy.com/2018/05/17/使用PHP扩展COM解决word文档转PDF问题/index.html">
 <meta property="og:site_name" content="小小青喻's 博客">
 <meta property="og:description" content="公司最近在一个政府项目，要把需要的word文件在线预览出来，想到PDF原生对浏览器的友好支持，所以想到把做好的word文件先转成PDF，然后再输出出去，现在把做这个事情遇到的一些坑，总结一下!">
-<meta property="og:updated_time" content="2018-05-17T13:57:14.118Z">
+<meta property="og:updated_time" content="2018-05-17T14:01:23.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用PHP扩展COM解决word文档转PDF问题">
 <meta name="twitter:description" content="公司最近在一个政府项目，要把需要的word文件在线预览出来，想到PDF原生对浏览器的友好支持，所以想到把做好的word文件先转成PDF，然后再输出出去，现在把做这个事情遇到的一些坑，总结一下!">
@@ -344,16 +344,16 @@
 <h2 id="1-开启php的dcom扩展"><a href="#1-开启php的dcom扩展" class="headerlink" title="1.开启php的dcom扩展"></a>1.开启php的dcom扩展</h2><p>打开php.ini，搜索php_com_dotnet和php_com_dotnet：</p>
 <p>extension=php_com_dotnet.dll   //把前面的分号去掉</p>
 <p>com.allow_dcom = true  //改为true<br>然后重启apache或nginx服务。</p>
-<h2 id="2-服务器上安装office组件"><a href="#2-服务器上安装office组件" class="headerlink" title="2.服务器上安装office组件"></a>2.服务器上安装office组件</h2><p>我们公司目前都是用的windows服务，看自己的系统，因为项目中需要使用<code>PHPOffice/PHPWord</code>把文档中的变量转成需要的值，而这个库只支持，所以word的版本不能低于word2007,具体安装和激活office的过程这里我就不多说了，自己百度或google去。</p>
+<h2 id="2-服务器上安装office组件"><a href="#2-服务器上安装office组件" class="headerlink" title="2.服务器上安装office组件"></a>2.服务器上安装office组件</h2><p>我们公司目前都是用的windows服务，看自己的系统，因为项目中需要使用<code>PHPOffice/PHPWord</code>把文档中的变量转成需要的值，而这个库只支持docx，所以word的版本不能低于word2007,具体安装和激活office的过程这里我就不多说了，自己百度或google去。</p>
 <h2 id="3-服务器开启组件服务权限"><a href="#3-服务器开启组件服务权限" class="headerlink" title="3.服务器开启组件服务权限"></a>3.服务器开启组件服务权限</h2><p>我们的具体代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$word = <span class="keyword">new</span> COM(<span class="string">"Word.Application"</span>) <span class="keyword">or</span> <span class="keyword">die</span> (<span class="string">"Could not initialise Object."</span>);</div><div class="line">$word-&gt;Visible  = <span class="number">0</span>;</div><div class="line">$word-&gt;DisplayAlerts = <span class="number">0</span>;</div><div class="line">$word-&gt;Documents-&gt;Open($print-&gt;createFile); <span class="comment">//$print-&gt;createFile 是具体word文件的路径</span></div><div class="line">$word-&gt;ActiveDocument-&gt;ExportAsFixedFormat($print-&gt;createPdfFile, <span class="number">17</span>, <span class="keyword">false</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="number">2</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>);<span class="comment">//转换为pdf模式  $print-&gt;createPdfFile 是生成的pdf文件的路径</span></div><div class="line">$word-&gt;Quit(<span class="keyword">false</span>);</div></pre></td></tr></table></figure></p>
 <p>如果没有开启组件服务权限的话，使用COM扩展的话会报下面这样的错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Can&apos;t open Word doc with COM in PHP</div></pre></td></tr></table></figure></p>
-<p>为了解决这个问题，查询N多网站，最后还是在stackoverflow上面找到了解决方式：<br>&gt;</p>
+<p>为了解决这个问题，查询N多网站，最后还是在stackoverflow上面找到了解决方式：</p>
 <ol>
-<li>按<code>ctrl</code>+’R’打开运行。</li>
+<li>按<code>ctrl</code> + <code>R</code>打开运行。</li>
 <li>输入<code>mmc -32</code>，然后回车，打开控制台1。</li>
-<li>点击<code>文件</code>-&gt;<code>添加或删除管理单元</code>，然后在左侧找到<code>组件服务</code>，点击<code>添加</code>，然后点击确定。</li>
-<li>然后在控制台1的界面就会看到控制台根节点下面有了<code>组件服务</code>，然后依次点击<code>计算机</code>-&gt;<code>我的电脑</code>-&gt;<code>DCOM配置</code>。</li>
-<li>在里面找到<code>Microsoft Office Word 97-2003</code>，这里才是重点，右键点击属性，<code>标识</code>，然后选中<code>交互式用户</code>，点击应用，然后确定。</li>
+<li>点击<code>文件</code>-<code>添加或删除管理单元</code>，然后在左侧找到<code>组件服务</code>，点击<code>添加</code>，然后点击确定。</li>
+<li>然后在控制台1的界面就会看到控制台根节点下面有了<code>组件服务</code>，然后依次点击<code>计算机</code>-<code>我的电脑</code>-<code>DCOM配置</code>。</li>
+<li>在里面找到<code>Microsoft Office Word 97-2003</code>，这里才是重点，右键<code>属性</code>-<code>标识</code>，然后选中<code>交互式用户</code>，点击应用，然后确定。</li>
 </ol>
 <p>大功告成，试试看下你的COM扩展库生效了没吧！</p>
 
